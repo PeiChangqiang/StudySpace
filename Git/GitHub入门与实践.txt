@@ -13,3 +13,20 @@
 	1.git的初始设置
 		1)设置姓名和邮箱地址：git config --global user.name ""     git config --global user.email ""
 		2)设置ui让命令输出更有可读性：git config --global color.ui auto
+
+三、使用GitHub的准备
+	1.设置SSH Key。通过SSH的公开密钥认证方式，可以连接github上已有的仓库。
+		ssh -keygen -t rsa -C "account"  -引号中输入自己的github账号。之后命令行提示要求输入密码，然后输入密码即可。
+		之后，windows操作系统的账户(Administrator)文件夹下会默认生成.ssh文件夹。其中会有id_rsa.pub文件，就是s生成的sh公钥。
+	
+	2.在github个人账户的设置下，找到SSH and GPG Keys菜单栏，然后New SSH Key,给自己的连接设置一个title，然后把公钥粘贴在key输入框中即可。
+
+	3.连接远程仓库
+		1）先远程创建仓库
+		2）GitHub Flavored Markdown：GitHub上用到的Issue、评论、Wiki，都用Markdown语法表述。很简单，请务必自行学会该语法。
+		3）git clone git@github.com:peichangqing/repository-name 从远程把建立的仓库克隆下来。
+		4）本地git自行管理仓库，例如使用命令git status;git add;git log;git commit -m ""  等等。当本地clean的时候。可以push到远程
+		5）git push：推送到远程服务器对应的仓库中。
+	
+四、实际操作Git
+	
