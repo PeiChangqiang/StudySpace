@@ -1,0 +1,93 @@
+DROP TABLE course;
+CREATE  TABLE course (
+  cId varchar(10) NOT NULL,
+  cName varchar(20) DEFAULT NULL,
+  tId varchar(20) DEFAULT NULL,
+  PRIMARY KEY (cId)
+);
+
+-- ----------------------------
+-- Records of course
+-- ----------------------------
+INSERT INTO course VALUES ('001', 'chinese', 't01');
+INSERT INTO course VALUES ('002', 'english', 't02');
+INSERT INTO course VALUES ('003', 'japanese', 't03');
+INSERT INTO course VALUES ('004', 'physical', 't04');
+INSERT INTO course VALUES ('005', 'history', 't05');
+
+
+
+
+
+-- ----------------------------
+-- Table structure for student
+-- ----------------------------
+DROP TABLE student;
+CREATE TABLE student (
+  SID varchar(30) NOT NULL,
+  sName varchar(30) DEFAULT NULL,
+  sAge NUMBER(11) DEFAULT NULL,
+  sSex varchar(10) DEFAULT NULL,
+  PRIMARY KEY (SID)
+);
+
+-- ----------------------------
+-- Records of student
+-- ----------------------------
+INSERT INTO student VALUES ('20081101', 'anni', '20', 'WM');
+INSERT INTO student VALUES ('20081102', 'Jack', '20', 'M');
+INSERT INTO student VALUES ('20081103', 'Tony', '21', 'M');
+INSERT INTO student VALUES ('20081104', 'King', '22', 'WM');
+INSERT INTO student VALUES ('20081105', 'Kevin', '23', 'M');
+INSERT INTO student VALUES ('20081106', 'Rose', '19', 'WM');
+
+
+
+
+
+
+
+
+
+-- ----------------------------
+-- Table structure for sc
+-- ----------------------------
+DROP TABLE sc;
+CREATE TABLE sc(
+  SID varchar(30) DEFAULT NULL,
+  cId varchar(10) DEFAULT NULL,
+  score NUMBER(11) DEFAULT NULL,
+  CONSTRAINT sc_ibfk_1 FOREIGN KEY (SID) REFERENCES student (SID),
+  CONSTRAINT sc_ibfk_2 FOREIGN KEY (cId) REFERENCES course (cId)
+) ;
+
+-- ----------------------------
+-- Records of sc
+-- ----------------------------
+INSERT INTO sc VALUES ('20081101', '001', '100');
+INSERT INTO sc VALUES ('20081102', '002', '90');
+INSERT INTO sc VALUES ('20081102', '001', '91');
+INSERT INTO sc VALUES ('20081103', '001', '89');
+INSERT INTO sc VALUES ('20081103', '002', '97');
+
+
+
+
+- ----------------------------
+-- Table structure for teacher
+-- ----------------------------
+DROP TABLE teacher;
+CREATE TABLE teacher (
+  tId varchar(20) NOT NULL,
+  tName varchar(30) DEFAULT NULL,
+  PRIMARY KEY (tId)
+);
+
+-- ----------------------------
+-- Records of teacher
+-- ----------------------------
+INSERT INTO teacher VALUES ('t01', 'zeng');
+INSERT INTO teacher VALUES ('t02', 'wang');
+INSERT INTO teacher VALUES ('t03', 'zhao');
+INSERT INTO teacher VALUES ('t04', 'yang');
+INSERT INTO teacher VALUES ('t05', 'chen');

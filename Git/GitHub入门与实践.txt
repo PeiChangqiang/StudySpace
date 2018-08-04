@@ -1,0 +1,15 @@
+一、GitHub的世界
+	1.github提供的主要功能
+		1）Git仓库
+		2）Organization：如果公司使用，则需要使用Organization账号。
+		3）Issue：将一个任务或者问题分配给一个Issue进行追踪和管理的功能。
+		4）Wiki：通过此功能任何人可以随时对一篇文章进行更改并且保存。常用在开发文档或者手册的编写中。
+		5）Pull Request：向GitHub推送更新，请求别人合并。
+
+
+
+
+二、Git的导入
+	1.git的初始设置
+		1)设置姓名和邮箱地址：git config --global user.name ""     git config --global user.email ""
+		2)设置ui让命令输出更有可读性：git config --global color.ui auto
