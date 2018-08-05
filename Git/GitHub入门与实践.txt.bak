@@ -47,6 +47,6 @@
 			git diff --cached，可以查看暂缓区和版本区之间的区别
 	2.分支的操作
 		1）git branch ：显示分支一览表，带*号的是当前所在的分支。
-		2）git checkout - b ：创建并且切换分支。相当于git branch + git checkout。例如 git checkout - b A = git branch A(创建分支A) + git checkout A(切换到分支A)
+		2）git checkout - b ：创建并且切换分支。相当于git branch + git checkout。例如 git checkout - b A = git branch A(创建分支A) + git checkout A(切换到分支A)。git checkout - 其中的 “-”可以表示上一个分支
 	
-		dddafdafd
+		

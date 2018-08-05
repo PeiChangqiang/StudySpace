@@ -48,5 +48,6 @@
 	2.分支的操作
 		1）git branch ：显示分支一览表，带*号的是当前所在的分支。
 		2）git checkout - b ：创建并且切换分支。相当于git branch + git checkout。例如 git checkout - b A = git branch A(创建分支A) + git checkout A(切换到分支A)。git checkout - 其中的 “-”可以表示上一个分支
-	
+		3）git merge ：合并分支。git checkout master先切换到主分支master上。然后git merge --no-ff feature-A：将feature-A分支合并到主分支上。参数--no-ff为了明确在历史记录中记下本次分支合并。
+		4）git log --graph ：以图表方式查看分支。
 		
