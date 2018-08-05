@@ -51,6 +51,6 @@
 		3）git merge ：合并分支。git checkout master先切换到主分支master上。然后git merge --no-ff feature-A：将feature-A分支合并到主分支上。参数--no-ff为了明确在历史记录中记下本次分支合并。
 		4）git log --graph ：以图表方式查看分支的历史操作信息。
 		5）git branch -d branch_name ：删除一个分支。如果删除的是当前所在的分支，则使用-D大写D的参数来删除。
-		6）git branch branch_name hash_val ： 恢复一个被删除的分支。需要知道它的散列值，如果不知道它的散列值，可以使用reflog命令寻找出来。
+		6）git branch branch_name hash_val ： 恢复一个被删除的分支。需要知道它的散列值，如果不知道它的散列值，可以使用git reflog命令寻找出来。
 	3.更改提交的操作
 		
