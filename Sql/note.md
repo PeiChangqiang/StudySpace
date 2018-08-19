@@ -1,9 +1,8 @@
-Product Code：4t46t6vydkvsxekkvf3fjnpzy5wbuhphqz
-serial Number：601769
-password：xs374ca
 
-八、使用函数处理数据
-	1.常见函数
+
+##### 八、使用函数处理数据
+
+?	1.常见函数
 		1）截取字符串:Oracle->substr(); Mysql->substring();
 		2）数据类型转换：Oracle有多个函数，Mysql->convert();
 		3）获取当前日期：Oracle->sysdate,Mysql->curdate();
@@ -24,8 +23,9 @@ password：xs374ca
 
 
 
-九、汇总数据
-	1.聚集函数
+##### 九、汇总数据
+
+?	1.聚集函数
 		1）avg();count();max();min();sum();
 		2）其中sum不仅可以计算某一列的和，还可以合计计算值。例如计算两个列相乘后所有行的和。
 	注：avg只用于单个列，并且忽略列值为null的行。count(*)包含含null的值，而count(column)忽略null值。
@@ -34,8 +34,9 @@ password：xs374ca
 	注：Distinct不能用于count(*)，只能用于count()指定列名。select count(distinct prod_price) from Products;
 	
 
-十、分组数据（group by）
-	1.group by子句中每一列都必须是检索列或者有效的表达式（+-*/），但不能是聚集函数。
+##### 十、分组数据（group by）
+
+?	1.group by子句中每一列都必须是检索列或者有效的表达式（+-*/），但不能是聚集函数。
 	2.group by必须在where之后，order by 之前。
 	3.除了聚集函数的列外，select中的每一列都必须在group by子句中给出。意思是group by后的列必须大于等于select中的列。因为先分组后select，只有分组后才能够select列。
 	4.过滤分组(having子句)
@@ -45,13 +46,20 @@ password：xs374ca
 	5.分组和排序
 		排序不能依赖group by，而应该使用order by。
 	
+
 	6.SELECT子句的顺序： select from where group by having order by。这是语句写法顺序，并不是数据库的执行顺序。
 
+##### 十一、使用子查询
 
-十一、使用子查询
+?	
+?		
+?		
+
+##### 十九、使用存储过程
+
+?	1.
 	
-		
-		
-十九、使用存储过程
-	1.
-	
+
+---
+
+[^account]: Product Code：4t46t6vydkvsxekkvf3fjnpzy5wbuhphqz;  serial Number：601769; password：xs374ca 
