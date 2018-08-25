@@ -38,3 +38,16 @@
 
 ##### 2.解决方案
 
+首先按照分数倒序排列就可以获得前三列，增加一列需要手动写一个伪列（select @i := 0） as t。
+
+即==select stu.* ,@i:=@+1 from ((select id,name,score from student) stu,(select @i:=0 ) as t)==
+
+该方式会增加一列依次从1,2,3往下排列。但是同分数的应该处于同一个排名，因此需要增加一个变量，来记录当前的分数，来判断是否和之前一样。
+
+==select stu.*,case when==
+
+==@j = stu.score then @i,==
+
+==when @j:= stu.score then @i:=@i+1==
+
+==end as rank from ((select id,name,score from student)stu,(select @i:=0,@j=null) as t);==
