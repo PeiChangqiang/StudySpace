@@ -29,3 +29,4 @@
 | test.ts                                 | 这是单元测试的主要入口点。 它有一些你不熟悉的自定义配置，不过你并不需要编辑这里的任何东西。 |
 | tsconfig.{app\|spec}.json               | TypeScript 编译器的配置文件。`tsconfig.app.json` 是为 Angular 应用准备的，而 `tsconfig.spec.json` 是为单元测试准备的。 |
 | tslint.json                             | 额外的 Linting 配置。当运行 `ng lint` 时，它会供带有 [Codelyzer](http://codelyzer.com/) 的 [TSLint](https://palantir.github.io/tslint/) 使用。 Linting 可以帮你们保持代码风格的一致性。 |
+
