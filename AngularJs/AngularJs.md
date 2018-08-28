@@ -1,4 +1,4 @@
-# AngularJs
+# AngularJs[^ 1]
 
 ### 一、项目结构
 
@@ -30,3 +30,16 @@
 | tsconfig.{app\|spec}.json               | TypeScript 编译器的配置文件。`tsconfig.app.json` 是为 Angular 应用准备的，而 `tsconfig.spec.json` 是为单元测试准备的。 |
 | tslint.json                             | 额外的 Linting 配置。当运行 `ng lint` 时，它会供带有 [Codelyzer](http://codelyzer.com/) 的 [TSLint](https://palantir.github.io/tslint/) 使用。 Linting 可以帮你们保持代码风格的一致性。 |
 
+##### 2.根目录
+
+
+
+
+
+
+
+
+
+---
+
+[^ 1]: 官方中文学习文档地址:https://www.angular.cn 
