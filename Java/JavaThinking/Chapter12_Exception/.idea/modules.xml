@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JavaThinking.iml" filepath="$PROJECT_DIR$/JavaThinking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter12_Exception.iml" filepath="$PROJECT_DIR$/Chapter12_Exception.iml" />
     </modules>
   </component>
 </project>
