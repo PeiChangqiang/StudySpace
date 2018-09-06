@@ -1,5 +1,8 @@
 package com.pcq.createException;
 
+/**
+ * this is a class summary
+ */
 public class TestException {
 
     /**
@@ -15,6 +18,7 @@ public class TestException {
     public static void main(String[] args){
 
         try {
+            System.out.println("idea 的快捷键真的是特别好用");
             new TestException().f();
             new TestException().methodA("something");
         } catch (MyException e) {
@@ -26,6 +30,8 @@ public class TestException {
     public void test() {
 
     }
+
+
     public void methodA(String test) {
 
     }
