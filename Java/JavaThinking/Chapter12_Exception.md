@@ -38,3 +38,31 @@ class ExceptionWithMsg extends Exception {
 }
 ```
 
+### 二、捕获异常
+
+* 语句结构
+
+```java
+try{
+    //发生异常代码块
+   throw new NullPointerException("this is a nullpointer Exception");
+}catch(NullPointerException e){
+    //捕获后所作出的处理
+    e.printStackTrace();//打印异常信息，异常发生的所在代码行
+}
+
+/**如果捕获多个异常，则try后面可以增加多个catch语句块。注意的是，异常要从小往大catch。假设第一个catch的异常为Exception那么大，那么后面的小异常语句块将会被忽略，不作处理。*/
+
+/**有时候需要在捕获异常的时候抛出异常，就像这样*/
+try{
+	throw new Exception();
+}catch(Exception e) {
+    e.printStackTrace();
+    throw new NullPointerException();//捕获了大异常，这里却抛出了一个小的空指针异常
+}
+
+
+```
+
+* 异常链
+
