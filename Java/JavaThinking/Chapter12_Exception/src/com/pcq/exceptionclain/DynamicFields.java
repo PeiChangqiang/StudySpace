@@ -38,4 +38,28 @@ public class DynamicFields {
         }
         return fieldNumber;
     }
+
+    private int makeField(String id) {
+        for (int i = 0; i < fields.length; i++) {
+            if(fields[i][0] == null) {
+                fields[i][0] = id;
+                return i;
+            }
+        }
+        //如果当前数组已经满了，则增加一个空位
+        Object[][] temp = new Object[fields.length + 1][2];
+        for (int i = 0; i < fields.length; i++) {
+            temp[i] = fields[i];
+        }
+        for (int i = fields.length; i < temp.length; i++) {
+            temp[i] = new Object[]{null, null};
+        }
+        fields = temp;
+        return makeField(id);
+    }
+
+    public Object getField(String id) throws NoSuchFieldException {
+        return fields[getFieldNumber(id)][1];
+    }
+    
 }
