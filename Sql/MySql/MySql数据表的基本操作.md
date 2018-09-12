@@ -32,7 +32,7 @@ column3 数据类型 [列约束条件]
 
 * 数据类型
 
-[数据类型](....)
+  点击链接[数据类型](....)查看MySql数据类型详解
 
 * 约束
 
@@ -127,19 +127,41 @@ DROP TABLE dept;
 
 ###### 2)修改字段名
 
-* ALTER TABLE table_name CHANGE old_name  new_name [数据类型]
+* ALTER TABLE table_name CHANGE[^5] old_name  new_name [数据类型]
 
 ###### 3)修改字段的数据类型
 
+* ALTER TABLE table_name MODIFY cloumn_name (数据类型)
+
 ###### 4)添加字段
+
+* ALTER TABLE table_name ADD[^6] cloumn_name (数据类型) [约束条件]  <first| after字段名>
 
 ###### 5)删除字段  
 
+* ALTER TABLE table_name DROP cloumn_name;
+
 ###### 6)删除外键约束
 
-###### 7)修改字段排列位置
+* ALTER TABLE table_name DROP FOREIGN KEY  key_name;
 
-###### 8)更改表的存储引擎
+###### 7)更改表的存储引擎
+
+* ALTER TABLE table_name ENGINE=engine_name;
+
+
+
+##### 4.查询表
+
+* 查询表结构
+
+  DESC table_name;
+
+* 查询建表语句
+
+  SHOW CREATE TABLE table_name;
+
+
 
 ---
 
@@ -147,3 +169,5 @@ DROP TABLE dept;
 [^2]: 使用方式：create table emp(id int(11) primary key, sex varchar(10) default '男') 当插入一条数据未给该sex字段取值时，该字段默认值为男。
 [^3]: 使用这个约束的字段必须是整数类型 。默认是从1开始递增。
 [^4]: 外键可以是任何一个字段。但是必须得关联主表的主键，所以必须和主表主键的字段类型保持一致。外键可以多个，并且==外键可以为空== 
+[^5]: 这个关键字不仅可以修改字段名称还可以同时修改数据类型。modify只能修改数据类型 
+[^6]: 默认新增字段的位置在最后追加。如果指定位置可以用first 或者after 关键字
