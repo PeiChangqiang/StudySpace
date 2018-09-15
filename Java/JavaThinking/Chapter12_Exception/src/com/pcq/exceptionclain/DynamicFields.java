@@ -61,5 +61,5 @@ public class DynamicFields {
     public Object getField(String id) throws NoSuchFieldException {
         return fields[getFieldNumber(id)][1];
     }
-    
+
 }
