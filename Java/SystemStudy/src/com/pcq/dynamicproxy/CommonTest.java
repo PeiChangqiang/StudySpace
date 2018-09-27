@@ -11,4 +11,10 @@ public class CommonTest {
         makeDinner.makeDinner();
         makeDinner.makeSoup("参数");
     }
+
+    @Test
+    public void testInterceptorJdkProxy() {
+        MakeDinner proxy = (MakeDinner) InterceptorJdkProxy.bind(new MakeDinnerImpl(), "com.pcq.dynamicproxy.MyInterceptor");
+        proxy.makeDinner();
+    }
 }
