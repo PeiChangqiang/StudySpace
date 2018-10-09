@@ -18,12 +18,12 @@ public class ForNameCreator extends PetCreator {
     };
 
     private static void load() {
-        for(String typeName : typeNames) {
-            try {
+        try {
+            for(String typeName : typeNames) {
                 types.add((Class<? extends Pet>) Class.forName(typeName));
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
             }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
     }
 
