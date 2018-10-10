@@ -10,7 +10,7 @@
             <transactionManager type="JDBC"></transactionManager>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="106.12.6.95:3306/pcq_test"/>
+                <property name="url" value="jdbc:mysql://106.12.6.95:3306/pcq_test?useSSL=false"/>
                 <property name="username" value="root"/>
                 <property name="password" value="Pcq@1234"/>
             </dataSource>
@@ -19,5 +19,6 @@
     <!--映射文件-->
     <mappers>
         <mapper resource="StudentMapper.xml"/>
+        <mapper class="com.pcq.mapper.StudentMapper2"/>
     </mappers>
 </configuration>
