@@ -69,9 +69,9 @@ public static void main(String[] args) {
 }
 ```
 
-##### 6.数学块
+##### 6.数学块	
 
-​	输入两个美元符号&&，然后回车，在输入框中输入ex/LaTex格式的数学公式。
+​	输入两个美元符号$$，然后回车，在输入框中输入ex/LaTex格式的数学公式。
 $$
 \mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}
 \mathbf{i} & \mathbf{j} & \mathbf{k} \
