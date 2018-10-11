@@ -4,7 +4,7 @@
 
 | 名称                             | 说明                                                        |
 | -------------------------------- | ----------------------------------------------------------- |
-| SqlSessionFactoryBuilder(构造器) | 根据配置或者代码生成SqlSessionFactory。采用的是分布构建模式 |
+| SqlSessionFactoryBuilder(构造器) | 根据配置或者代码生成SqlSessionFactory。采用的是分步构建模式 |
 | SqlSessionFactory(工厂接口)      | 它用来生成SqlSession。工厂模式                              |
 | SqlSession(会话)                 | 可以发送sql执行，并且返回结果。也可以生成Mapper接口         |
 | SQL Mapper(映射器)               | 由Java接口和XML(或者注解)组成，定义映射规则。发送Sql执行    |
@@ -298,3 +298,75 @@ Student student = studentMapper2.findStudentById("20081101");
 
 <font color='red'>综上所述，使用mapper更好。</font>
 
+### 五、组件对象的生命周期
+
+生命周期就是讨论一个对象的存活时间，及时销毁不必要的对象可以节省资源占用，提高效率。应该==根据对象的作用==来讨论对象的生命周期。
+
+* SqlSessionFactotyBuilder
+
+  它的作用用来创建SqlSessionFactory。当它创建完毕后，就是去了作用。它的生命周期应该在创建SqlSessionFactory的方法中，而不应该长期存在。
+
+* SqlSessionFactory
+
+  它相当于数据库连接池，作用是创建SqlSession，也就是提供操作数据库的接口。因此它的生命周期应该和MyBatis的应用周期保持一致。一般来说，为避免过多的数据库连接池占用太多的资源，所以应用中它是单例的。
+
+* SqlSession
+
+  它的作用是能够直接操作数据库，包括执行sql，控制事务(commit,roolback)等。当它使用完毕后，应该close归还给SqlSessionFactory。否则太多的链接可能导致系统瘫痪。它的生命周期是从SqlSessionFactory那里获得，一直到close。
+
+* Mapper
+
+  Mapper由SqlSession创建，用于在一个会话中处理数据业务。因此它的生命周期小于等于SqlSession。我们处理完数据业务后，就该废弃它。否则当SqlSession关闭时，它的数据链接资源也会消失。
+
+![1539226562108](C:\Users\pcq\AppData\Roaming\Typora\typora-user-images\1539226562108.png)
+
+### 六、封装SqlSessionFactoryUtils
+
+* 该工具类保证SqlSessionFactory在应用上下文中是单例的，并且提供了获得SqlSession的方法。
+
+```java
+package com.pcq.utils;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import java.io.IOException;
+import java.io.InputStream;
+
+public class SqlSessionFactoryUtils {
+    private static final Class<SqlSessionFactoryUtils> LOCK = SqlSessionFactoryUtils.class;
+    private static SqlSessionFactory sqlSessionFactory = null;
+    private SqlSessionFactoryUtils() {}//防止外部通过new的方式创建该类的实例
+    public static SqlSessionFactory getSqlSessionFactory() {
+        //加锁是为了防止多线程中会出现多个实例。
+        synchronized (LOCK) {
+            if(sqlSessionFactory != null)
+                return sqlSessionFactory;
+            String resource = "mybatis_config.xml";
+            InputStream inputStream = null;
+            try {
+                inputStream = Resources.getResourceAsStream(resource);
+                sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+            } catch (IOException e) {
+                e.printStackTrace();
+                return null;
+            }
+            return sqlSessionFactory;
+        }
+    }
+
+    public static SqlSession openSession() {
+        return sqlSessionFactory == null ? getSqlSessionFactory().openSession() : sqlSessionFactory.openSession();
+    }
+}
+```
+
+### 七、总结
+
+* 学习了MyBatis的核心组件以及它们的作用和它们之间的关系
+* 知道了各个组件的生命周期
+* 学会了基本的配置(xml配置)或者代码注解来构建Mybatis上下文和数据库进行交互
+* 学会了简单的封装一个Utils来获得数据库会话并和数据库进行交互
+
+到此，这些都是最基础的学习和使用。后面还有更高级的应用方式需要深入学习和了解。路漫漫其修远兮，吾将上下而求索。
