@@ -4,4 +4,16 @@
     <select id="findStudentById" parameterType="string" resultType="student">
         SELECT sId,sName,sAge,sSex FROM student WHERE sId = #{id}
     </select>
+    <insert id="insertStudent" parameterType="student">
+        INSERT INTO student(sName,sAge,sSex) VALUES (#{sName}, #{sAge}, #{sSex})
+    </insert>
+    <delete id="deleteStudentById" parameterType="string">
+        DELETE FROM student WHERE sId=#{sId}
+    </delete>
+    <update id="updateStudent" parameterType="student">
+        UPDATE student SET sName = #{sName},sAge = #{sAge}, sSex = #{sSex} WHERE sId = #{sId}
+    </update>
+    <select id="findStudentsByName" parameterType="string" resultType="student">
+        SELECT sId,sName,sAge,sSex FROM student WHERE sName LIKE concat('%',#{sName},'%')
+    </select>
 </mapper>

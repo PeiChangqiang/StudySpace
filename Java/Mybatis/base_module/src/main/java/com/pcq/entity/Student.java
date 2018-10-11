@@ -4,7 +4,7 @@ public class Student {
     private String sId;
     private String sName;
     private Integer sAge;
-    private String sSes;
+    private String sSex;
 
     public String getsId() {
         return sId;
@@ -30,11 +30,11 @@ public class Student {
         this.sAge = sAge;
     }
 
-    public String getsSes() {
-        return sSes;
+    public String getsSex() {
+        return sSex;
     }
 
-    public void setsSes(String sSes) {
-        this.sSes = sSes;
+    public void setsSex(String sSex) {
+        this.sSex = sSex;
     }
 }
