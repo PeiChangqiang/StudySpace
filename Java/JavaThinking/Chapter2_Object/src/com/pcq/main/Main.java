@@ -18,7 +18,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        mainTest();
+        System.getProperties().list(System.out);
+        System.out.println("---------------------------------------------");
+        System.out.println(System.getProperty("user.name"));
+        System.out.println(System.getProperty("java.library.path"));
     }
 
 }

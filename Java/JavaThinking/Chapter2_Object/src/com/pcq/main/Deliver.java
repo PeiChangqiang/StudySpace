@@ -20,6 +20,12 @@ public class Deliver {
         a.a++;
         System.out.println(a.a);
     }
+
+
+    public void splitData(final Data a) {
+        a.a--;
+        System.out.println(a.a);
+    }
 }
 
 
