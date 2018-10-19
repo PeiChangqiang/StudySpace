@@ -35,7 +35,18 @@ public class Main {
         Random r = new Random();
         print(r.nextBoolean());
         char x = 0xffff;
-        print((int)x);
+        print(Character.toLowerCase(x));
+        printLine();
+        long x1 = 0x123afd;
+        long x2 = 0x34abda;
+        print(Long.toBinaryString(x1) + "," + Long.toBinaryString(x2));
+        print(Long.toBinaryString(x1-x2) + "," + Long.toBinaryString(x1 * x2));
+
+        long x3 = 03247;
+        long x4 = 0275221;
+        printLine();
+        print(x3 * x4);
+        print(Long.toOctalString(x3 * x4));
     }
 }
 
