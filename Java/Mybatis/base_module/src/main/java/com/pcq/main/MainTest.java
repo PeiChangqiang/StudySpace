@@ -2,7 +2,8 @@ package com.pcq.main;
 
 import com.pcq.entity.Student;
 import com.pcq.mapper.StudentMapper;
-import com.pcq.utils.SqlSessionFactoryUtils;
+import com.pcq.util.SqlSessionFactoryUtils;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.log4j.Logger;
 

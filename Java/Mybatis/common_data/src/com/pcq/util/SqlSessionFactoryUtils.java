@@ -1,4 +1,4 @@
-package com.pcq.utils;
+package com.pcq.util;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
