@@ -16,7 +16,7 @@ public class SqlSessionFactoryUtils {
         synchronized (LOCK) {
             if(sqlSessionFactory != null)
                 return sqlSessionFactory;
-            String resource = "mybatis_config.xml";
+            String resource = "mybatis-config.xml";
             InputStream inputStream = null;
             try {
                 inputStream = Resources.getResourceAsStream(resource);
