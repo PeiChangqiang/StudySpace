@@ -70,13 +70,13 @@ database.password=Pcq@1234
 
 #### 总结：
 
-​	这里学习了三种配置方式。这些配置方式是有优先级的，最高的是代码传递方式，其次是properties文件，最后才是property子元素。Mybatis会根据优先级来覆盖之前配置的信息。
+​	这里学习了三种配置方式。这些配置方式是有优先级的，最高的是代码传递方式，其次是properties文件，最后才是property子元素。Mybatis会根据优先级来覆盖之前配置的信息。一般都是用配置文件的方式。
 
 ### 三、settings设置
 
-* 该设置是Mybatis中最复杂的配置。能深刻影响Mybatis的底层运行。一般情况下使用它的默认值或者修改一些常用的规则。
+* 该设置是Mybatis中最复杂的配置。能深刻==影响Mybatis的底层运行==。一般情况下使用它的默认值或者修改一些常用的规则。
 
-* 配置项说明
+##### 1.配置项说明
 
 | 配置项                            | 作用                                                         | 选项值                                  | 默认值                            |
 | --------------------------------- | ------------------------------------------------------------ | --------------------------------------- | --------------------------------- |
@@ -105,8 +105,9 @@ database.password=Pcq@1234
 | vfsImpl                           | 指定VFS的实现类                                              | 提供VFS的类全限定名，存在多个则逗号分隔 | Not set                           |
 | useActualParamName                | 允许用方法参数中声明的实际名称引用参数[^7]                   | true\|false                             | true                              |
 
-* 虽然settings的配置项比较多，但是常用的和比较重要的只有：cachedEnabled，lazyLoadingEnabled，aggressiveLazyLoading，autoMappingBehavior，mapUnderscoreToCamelCase,defaultExecutorType。
-* 全量配置样例
+* 虽然settings的配置项比较多，但是常用的和比较重要的只有：<font color="red">cachedEnabled，lazyLoadingEnabled，aggressiveLazyLoading，autoMappingBehavior，mapUnderscoreToCamelCase,defaultExecutorType</font>。
+
+##### 2.全量配置样例
 
 ```xml
 <settings>
@@ -128,7 +129,86 @@ database.password=Pcq@1234
     <setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/></settings>
 ```
 
+### 四、typeAliases别名
 
+* 为了使用方便，MyBatis提供了别名方式。其中分为系统别名和自定义别名。
+
+##### 1.系统别名
+
+基本类型的别名在前面加短线,例如==int==的别名是==_int==。包装类型别名就是小写，例如==Double==的别名是==double==，==Boolean==的别名是==boolean==。
+
+其它常用的类型系统定义别名：
+
+| Java类型   | 别名       | 是否支持数组 |
+| ---------- | ---------- | ------------ |
+| String     | string     | 是           |
+| Date       | date       | 是           |
+| BigDecimal | decimal    | 是           |
+| Object     | object     | 是           |
+| Map        | map        | 否           |
+| HashMap    | hashmap    | 否           |
+| List       | list       | 否           |
+| ArrayList  | arraylist  | 否           |
+| Collection | collection | 否           |
+| Iterator   | iterator   | 否           |
+| ResultSet  | ResultSet  | 否           |
+
+* 可以看出，集合框架中的类型都不支持数组。
+
+##### 2.自定义别名
+
+* 定义别名的方式
+
+```xml
+ <typeAliases><!--别名-->
+    <typeAlias alias="student" type="com.pcq.entity.Student" />
+ </typeAliases>
+```
+
+* 如果需要自定义的别名特别多，则可以通过扫描包的方式处理
+
+```xml
+<typeAliases><!--别名-->
+    <!--mybatis扫描entity这个包下所有的类，将类的首字母变成小写作为别名-->
+    <package name="com.pcq.entity"/>
+</typeAliases>
+```
+
+<font color="red">如果出现扫描的两个包下有相同的类名，则需要通过注解@Alias进行区分。例如在实体类public class User{}上添加注解@Alias("user2")，该User类别名将会被认定为user2</font>
+
+### 五、typeHandler类型转换器
+
+* 数据库有自己的数据类型，而java也有自己的数据类型。所以它俩需要一个数据类型对应的转换，typeHandler承担了这个责任。一般系统提供的typeHandler覆盖了大部分的场景，少数特殊情况则需要我们自己定义。
+
+##### 1.系统定义的typeHandler
+
+| 类型处理器                 | Java类型           | JDBC类型                    |
+| -------------------------- | ------------------ | --------------------------- |
+| BooleanTypeHandler         | boolean            | BOOLEAN                     |
+| ByteTypeHandler            | byte               | NUMERIC或BYTE               |
+| ShortTypeHandler           | short              | NUMERIC或SHORT INTEGER      |
+| IntegerTypeHandler         | int                | NUMERIC或INTEGER            |
+| LongTypeHandler            | long               | NUMERIC或LONG INTEGER       |
+| FloatTypeHandler           | float              | NUMERIC或FLOAT              |
+| DoubleTypeHandler          | double             | NUMERIC或DOUBLE             |
+| BigDeciamlTypeHandler      | BigDecimal         | NUMBER或DECIMAL             |
+| StringTypeHandler          | String             | CHAR  VARCHAR               |
+| ClobReaderTypeHandler      | Reader             | -                           |
+| ClobTypeHandler            | String             | CLOB LONGVARCHAR            |
+| NStringTypeHandler         | String             | NVARCHAR NVARCHAR           |
+| NClobTypeHandler           | String             | NCLOB                       |
+| BlobInputStreamTypeHandler | InputStream        | -                           |
+| ByteArrayTypeHandler       | byte[]             | 数据库兼容的字节流类型      |
+| BlobTypeHandler            | byte[]             | BLOB  LONGVARBINARY         |
+| DateTypeHandler            | java.util.Date     | TIMESTAMP                   |
+| DateOnlyTypeHandler        | java.util.Date     | DATE                        |
+| TimeOnlyTypeHandler        | java.util.Date     | TIME                        |
+| SqlTimestampTypeHandler    | java.sql.Timestamp | TIMESTAMP                   |
+| SqlDateTypeHandler         | java.sql.Date      | DATE                        |
+| SqlTimeTypeHandler         | java.sql.Time      | TIME                        |
+| ObjectTypeHandler          | Any                | OTHER                       |
+| EnumTypeHandler            | Enumeration Type   | VARCHAR(存储枚举的名称)     |
+| EnumOrdinalTypeHandler     | Enumeration Type   | NUMERIC或DOUBLE（存储索引） |
 
 
 

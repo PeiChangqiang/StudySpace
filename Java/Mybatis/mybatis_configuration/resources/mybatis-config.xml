@@ -21,7 +21,7 @@
         <setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>
     </settings>
     <typeAliases><!--别名-->
-        <typeAlias alias="student" type="com.pcq.entity.Student" />
+        <package name="com.pcq.entity"/>
     </typeAliases>
     <!--数据库环境-->
     <environments default="development">
