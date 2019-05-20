@@ -1,4 +1,4 @@
-package com.pcq.utils;
+package com.pcq.util;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -16,7 +16,7 @@ public class SqlSessionFactoryUtils {
         synchronized (LOCK) {
             if(sqlSessionFactory != null)
                 return sqlSessionFactory;
-            String resource = "mybatis_config.xml";
+            String resource = "mybatis-config.xml";
             InputStream inputStream = null;
             try {
                 inputStream = Resources.getResourceAsStream(resource);
