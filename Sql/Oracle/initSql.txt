@@ -1,3 +1,6 @@
+sysDBA :root/Root@123.
+
+
 DROP TABLE course;
 CREATE  TABLE course (
   cId varchar(10) NOT NULL,
@@ -22,7 +25,7 @@ INSERT INTO course VALUES ('005', 'history', 't05');
 -- ----------------------------
 -- Table structure for student
 -- ----------------------------
-DROP TABLE student;
+DROP TABLE student; 
 CREATE TABLE student (
   SID varchar(30) NOT NULL,
   sName varchar(30) DEFAULT NULL,
