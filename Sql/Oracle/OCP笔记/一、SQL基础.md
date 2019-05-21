@@ -58,7 +58,7 @@
 * decode()：SELECT s.*,DECODE(sname,'Jack',sage+1,sage) age FROM student s;[^7]
 * distinct()：去重
 * chr() 和 ASCLL()：将ascll码转换成字符或者将字符转换成ascll码。
-* sys_context()：获取环境上下文。select sys_context('userenv','ip_address') from dual;
+* sys_context()：获取环境上下文，该函数常常用在触发器中，统计用户登录登出信息等。select sys_context('userenv','ip_address') from dual;
 
 
 
