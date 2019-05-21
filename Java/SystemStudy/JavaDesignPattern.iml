@@ -20,7 +20,11 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
+<<<<<<< HEAD
           <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.5.RELEASE/spring-core-4.3.5.RELEASE.jar!/org/springframework/cglib" />
+=======
+          <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.5.RELEASE/spring-aop-4.3.5.RELEASE.jar!/org/aopalliance" />
+>>>>>>> 931e028872b27ebe5051d7d664b88ffbb40daeeb
         </CLASSES>
         <JAVADOC />
         <SOURCES />
