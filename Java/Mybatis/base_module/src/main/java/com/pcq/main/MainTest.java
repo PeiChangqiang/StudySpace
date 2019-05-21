@@ -7,7 +7,7 @@ import com.pcq.util.SqlSessionFactoryUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.log4j.Logger;
 
-import java.util.List;
+import java.util.*;
 
 public class MainTest {
     public static void main(String[] args) {
@@ -28,6 +28,6 @@ public class MainTest {
                 sqlSession.close();
             }
         }
-
     }
+
 }

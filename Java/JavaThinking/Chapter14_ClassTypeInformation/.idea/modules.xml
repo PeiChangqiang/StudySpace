@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../Chapter12_Exception/Chapter12_Exception.iml" filepath="$PROJECT_DIR$/../Chapter12_Exception/Chapter12_Exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chapter14_ClassTypeInformation.iml" filepath="$PROJECT_DIR$/Chapter14_ClassTypeInformation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Chapter2_Object/Chapter2_Object.iml" filepath="$PROJECT_DIR$/../Chapter2_Object/Chapter2_Object.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Chapter3_Operator/Chapter3_Operator.iml" filepath="$PROJECT_DIR$/../Chapter3_Operator/Chapter3_Operator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../common_data/common_data.iml" filepath="$PROJECT_DIR$/../common_data/common_data.iml" />
     </modules>
   </component>
 </project>
