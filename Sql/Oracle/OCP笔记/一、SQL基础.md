@@ -134,9 +134,41 @@
 
 ​	连续两个单引号表示转义：SELECT 'son' || ' is father''s son ' FROM dual;
 
+##### 4.4 IN 和 NOT IN
+
+##### 4.5  交互输入变量值& 和&&
+
+​	SELECT * FROM student WHERE sage = &age; 当前等待输入age的值，之后用输入值替代 &age。
+
+​       该变量存储功能可以通过 set define on|off 来打开或者关闭。
+
 ## 五、分组函数
 
+##### 5.1 最重要的5个分组函数
 
+| 函数    | 说明   | 备注              |
+| ------- | ------ | ----------------- |
+| sum()   | 求和   |                   |
+| avg()   | 平均   |                   |
+| count() | 计数   | 该函数 不包括空值 |
+| max()   | 最大值 |                   |
+| min()   | 最小值 |                   |
+
+数值型可用以上5个函数。count()、max()、min()可用于日期和字符类型。
+
+##### 5.2 在分组函数中使用nvl()
+
+​	select avg(nvl(sage,20)) from student;如果该列为空值则当20处理。
+
+##### 5.3 Group by创建组
+
+* group by后面的列也叫做分组特性，如果使用了group by，select 后面只能有两种类型的列，一个是**组函数列**，一个是**分组特性列**（可选）。
+
+* 对分组结果进行过滤 则使用 **Having**。
+
+  **select** ssex,avg(sage) **from** student **where** sage > 20 **group by** ssex **having** avg(sage) > 21 **order by** ssex;
+
+  **执行语序**：from -> where -> group by -> having ->select -> order by；
 
 ## 六、数据限定和排序
 
