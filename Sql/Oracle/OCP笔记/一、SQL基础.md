@@ -158,7 +158,7 @@
 
 ##### 5.2 在分组函数中使用nvl()
 
-​	select avg(nvl(sage,20)) from student;如果该列为空值则当20处理。
+​	select avg(nvl(sage,20)) from student;如果该sage列为空值则当20处理。
 
 ##### 5.3 Group by创建组
 
