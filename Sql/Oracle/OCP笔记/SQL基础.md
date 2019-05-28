@@ -136,6 +136,9 @@
 
 ##### 4.4 IN 和 NOT IN
 
+* NOT : 常见使用方式有， not(a=b); a not like '%s%'; not in();not between a and b; is not null;not exists(select 子查询)
+* NOT IN： **后接不能出现空值，否则主查询无法查出结果**。select * from a where a not in(1,2,null);则返回空。
+
 ##### 4.5  交互输入变量值& 和&&
 
 ​	SELECT * FROM student WHERE sage = &age; 当前等待输入age的值，之后用输入值替代 &age。
@@ -300,7 +303,10 @@ SQL：
 
 ###### 3）多行多列子查询
 
-​	
+​	以select主查询的Where子句中的多个列合并作为比较条件，分成对比较和不成对比较。
+
+* 成对：select * from tab where (column_a, column_b) in (select column_a,column_b from tab where ...) 
+* 不成对：select * from tab where column_a in (select column_a from tab where...) and column_b in(select column_b from tab where...);
 
 ---
 
