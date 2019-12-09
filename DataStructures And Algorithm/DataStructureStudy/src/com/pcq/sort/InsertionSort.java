@@ -31,12 +31,17 @@ public class InsertionSort {
 	}
 	
 	
+	/**
+	 * 优化后的插入排序，加入了break。平均时间复杂度为O(n^2)	
+	 * @param array
+	 */
 	public static void insertionSort2(int[] array) {
 		if(array == null || array.length == 0) 
 			return;
-		for(int i = 1; i < array.length; ++i) {//默认从1开始，因为最开始第一个元素是有序区间
+		for(int i = 1; i < array.length; ++i) {//默认从1开始，因为最开始默认第一个元素是有序区间
+			//提取出来声明为了后面的插入数据
 			int value = array[i];
-			int j = i-1;
+			int j = i - 1;//从有序区间的最右处开始比，因为如果第一个元素比较就不符合条件，则说明无需移动位置直接break
 			for(; j >= 0; --j) {
 				if(value < array[j]) {
 					array[j+1] = array[j];
@@ -44,8 +49,9 @@ public class InsertionSort {
 					break;
 				}
 			}
-			array[j+1] = array[i];//插入数据
-		}
-		
+			array[j+1] = value;//插入数据
+		}		
 	}
+	
+	
 }
