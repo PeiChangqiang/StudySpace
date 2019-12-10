@@ -16,7 +16,7 @@ public class ReverseList {
 		node2.setNext(node3);
  
 		// 打印反转前的链表
-		Node h = head;
+		Node h = head; 
 		while (null != h) {
 			System.out.print(h.getData() + " ");
 			h = h.getNext();
