@@ -44,13 +44,10 @@ public class LinkStack {
 		if(this.head.getNext() == null)
 			System.out.println("null");
 		Node temp = head;
-		String str ="[" ;
-		while(temp.getNext() != null) {
-			temp = temp.getNext();
-			str += temp.getData() + ","; 
+		while(temp != null) {
+			System.out.print(temp.getNext().getData() + " ");
+			temp = temp.getNext();	
 		}
-		str += "]";
-		System.out.println(str);
 	}
 	
 	public static void main(String[] args) {
