@@ -102,3 +102,7 @@
 * ##### 删除分支，git branch -d branchName
 
 * ##### 分支合并：git merge branchName 将分支合并到当前分支中。
+
+* ##### 合并冲突：a
+
+* b
