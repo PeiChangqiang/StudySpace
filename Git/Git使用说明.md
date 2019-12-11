@@ -68,25 +68,35 @@
 * **git add：**将当前文件添加至暂存区。
 
   * git add fileName, 如果想添加所有的改动到暂存区，则执行**git add .**
-
 * **git status：**查看当前版本库中的状态。
-
 * **git diff：**查看git status结果的详细信息。即查看当前改动和暂缓区的区别。
 
   * git diff --cached：查看暂存区和版本库的区别。
 
   * git diff head：查看当前改动和暂存区，版本库的区别。
-
 * **git commit：**将缓存区内容添加到版本库中。
 
   * 如果add 再提交觉得繁琐，可以git commit -am 'note'
-
 * **git reset head：**撤销**git add**操作。
 
   * git reset head -- fileName，撤销某个文件的暂存区提交。
-
 * **git rm：**删除文件。
 
   * git rm fileName，从工作区中删除某个文件，如果暂存区也有该文件，则一并删除。如果仅仅删除暂存区的而保留工作区中的则使用 git rm --cached fileName。
-
 * **git mv：**git mv 命令做得所有事情就是 **git rm --cached** 命令的操作， 重命名磁盘上的文件，然后再执行 git add 把新文件添加到缓存区。
+
+
+
+## Git分支管理
+
+<font color='red'>从git主线上分支开来，不影响主线上的工作。</font>
+
+### 分支管理常见命令
+
+* ##### 列出当前分支，git branch
+
+* ##### 创建分支,git branch branchName
+
+* ##### 切换分支,git checkout baranchName，或者 git checkout -b branchName创建新分支并且切换到该分支下。
+
+* 
