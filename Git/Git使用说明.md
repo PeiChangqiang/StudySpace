@@ -124,10 +124,10 @@
 
 
 ## Git标签
-
-##### <font color='red'>如果项目到了一个特别的阶段,希望Git总能记住当前这个快照，就可以给它打标签，也就是版本。</font>
+<font color='red'>如果项目到了一个特别的阶段,希望Git总能记住当前这个快照，就可以给它打标签，也就是版本。</font>
 
 * 查看仓库所有标签：git tag
-* 打标签：git tag -a,  -a的意思是添加注解，会记录谁在什么时候打的标签。 例如 git tag -a V1.0.0
+* 打标签：git tag -a -m,  -a的意思是添加注解，会记录谁在什么时候打的标签,-m是添加注释信息。 例如 git tag -a V1.0.0 -m '打基线版本'
 * 删除标签：git tag -d ,如果删除后需要推送到远程仓库，则git push origin --delete。例如 git tag -d V1.0.0 , git  push origin --delete V1.0.0
-* 指定标签信息命令：git tag -a (tagname)  -m 
+
+  
