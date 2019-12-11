@@ -104,3 +104,30 @@
 * ##### 分支合并：git merge branchName 将分支合并到当前分支中。
 
 * ##### 合并冲突：冲突的内容需要手动改掉，之后通过git add命令告知git冲突已经解决。
+
+
+
+## Git查看提交历史
+
+### Git log使用
+
+* 该命令查看提交历史
+* 参数说明
+  * --oneline 简洁输出模式
+  * --graph 查看分支、合并的历史
+  * --reverse 逆向查看历史日志
+  * --author 查看指定用户的提交历史，例如 git log --author=peichangqiang
+  * 指定历史日志的日期可以使用：--since  --before  --until  --after。例如：查看一周前并且十二月一日之后的提交，则：git log --oneline --before={1.weeks.ago} --after={2019-12-01}
+  * --no-merges 可以隐藏合并提交
+* [更多git log说明](http://git-scm.com/docs/git-log)
+
+
+
+## Git标签
+
+##### <font color='red'>如果项目到了一个特别的阶段,希望Git总能记住当前这个快照，就可以给它打标签，也就是版本。</font>
+
+* 查看仓库所有标签：git tag
+* 打标签：git tag -a,  -a的意思是添加注解，会记录谁在什么时候打的标签。 例如 git tag -a V1.0.0
+* 删除标签：git tag -d ,如果删除后需要推送到远程仓库，则git push origin --delete。例如 git tag -d V1.0.0 , git  push origin --delete V1.0.0
+* 指定标签信息命令：git tag -a (tagname)  -m 
