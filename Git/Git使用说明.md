@@ -99,4 +99,6 @@
 
 * ##### 切换分支,git checkout baranchName，或者 git checkout -b branchName创建新分支并且切换到该分支下。
 
-* 
+* ##### 删除分支，git branch -d branchName
+
+* ##### 分支合并：git merge branchName 将分支合并到当前分支中。
