@@ -70,10 +70,9 @@
   * git add fileName, 如果想添加所有的改动到暂存区，则执行**git add .**
 * **git status：**查看当前版本库中的状态。
 * **git diff：**查看git status结果的详细信息。即查看当前改动和暂缓区的区别。
-
-  * git diff --cached：查看暂存区和版本库的区别。
-
-  * git diff head：查看当前改动和暂存区，版本库的区别。
+* git diff --cached：查看暂存区和版本库的区别。
+  
+* git diff head：查看当前改动和暂存区，版本库的区别。
 * **git commit：**将缓存区内容添加到版本库中。
 
   * 如果add 再提交觉得繁琐，可以git commit -am 'note'
@@ -130,4 +129,8 @@
 * 打标签：git tag -a -m,  -a的意思是添加注解，会记录谁在什么时候打的标签,-m是添加注释信息。 例如 git tag -a V1.0.0 -m '打基线版本'
 * 删除标签：git tag -d ,如果删除后需要推送到远程仓库，则git push origin --delete。例如 git tag -d V1.0.0 , git  push origin --delete V1.0.0
 
-  
+
+
+
+## Git远程仓库(GitHub)
+
