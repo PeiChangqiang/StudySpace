@@ -30,6 +30,13 @@ public class StringUtils {
 		}
 		
 		System.out.println(initCap("peiCHangQiang"));
+		
+		String s = "want you to know one thing";
+		char n = 'n';
+		char o = 'o';
+		int i = getCharCount(s, n);
+		int j = getCharCount(s, o);
+		System.out.println("n出现的次数：" + i + ",o出现的次数：" + j);
 	}
 	
 	/**
@@ -74,4 +81,22 @@ public class StringUtils {
 	}
 
 
+	/**
+	 *统计char 在str中出现的次数
+	 * @param str
+	 * @param ch
+	 * @return
+	 */
+	public static int getCharCount(String str, char ch) {
+		if(isEmpty(str)) 
+			return -1;
+		char[] chars = str.toCharArray();
+		int count = 0;
+		for(char cha : chars) {
+			if(cha == ch) {
+				count++;
+			}
+		}
+		return count;
+	}
 }
