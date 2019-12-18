@@ -11,15 +11,18 @@ import com.pcq.util.ArrayUtil;
 public class BinarySearch {
 
 	public static void main(String[] args) {
-		int[] arr = ArrayUtil.getArray(100);
+		/*int[] arr = ArrayUtil.getArray(100);
 		ArrayUtil.printArray(arr);
 		InsertionSort.insertionSort2(arr);
 		ArrayUtil.printArray(arr);
 		//int index = BinarySearch.binarySearch(arr, 90);
 		int index1 = BinarySearch.binarySearchRecurve(arr, 90, 0, arr.length - 1);
 		//System.out.println(index);
-		System.out.println(index1);
+		System.out.println(index1);*/
 
+		int[] arr = {1,5,6,12,43,52,78,78,78};
+		int index = binarySearchFirstMini(arr,78);
+		System.out.println(index);
 	}
 	
 
@@ -64,5 +67,103 @@ public class BinarySearch {
 		} else {
 			return binarySearchRecurve(arr, value, mid + 1, right);
 		}
+	}
+	
+	
+	/**
+	 * 查找第一个出现的和给定值相等的元素
+	 * @param arr
+	 * @param value
+	 * @return
+	 */
+	public static int binarySearchFirst(int[] arr, int value) {
+		int left = 0;
+		int right = arr.length - 1;
+		while (left <= right) {
+			int mid = left + ((right - left) >> 11);
+			if(arr[mid] > value) {
+				right = mid - 1;
+			} else if(arr[mid] < value) {
+				left = mid + 1;
+			} else {
+				//如果是第一个元素或者前一个元素不等于给定值，则返回当前下标
+				if(mid == 0 || arr[mid - 1] != value) return mid;
+				else	right = mid - 1;
+			}
+		}
+		
+		return -1;
+	}
+	
+	
+	
+	
+	/**
+	 * 查找最后一个出现的和给定值相等的元素
+	 * @param arr
+	 * @param value
+	 * @return
+	 */
+	public static int binarySearchLast(int[] arr, int value) {
+		int left = 0;
+		int right = arr.length - 1;
+		while (left <= right) {
+			int mid = left + ((right - left) >> 1);
+			if(arr[mid] > value) {
+				right = mid - 1;
+			} else if(arr[mid] < value) {
+				left = mid + 1;
+			} else {
+				//如果是最后一个元素或者后一个元素不等于给定值，则返回当前下标
+				if(mid == arr.length - 1 || arr[mid + 1] != value) return mid;
+				else	left = mid + 1;
+			}
+		}
+		return -1;
+	}
+	
+	/**
+	 * 查找第一个大于等于给定值的元素
+	 * @param arr
+	 * @param value
+	 * @return
+	 */
+	public static int binarySearchFirstMax(int[] arr, int value) {
+		int left = 0;
+		int right = arr.length - 1;
+		while (left <= right) {
+			int mid = left + ((right - left) >> 1);
+			if(arr[mid] < value) {
+				left = mid + 1;
+			}  else {
+				//如果是第一个元素或者前一个元素不等于给定值，则返回当前下标
+				if(mid == 0 || arr[mid - 1] < value) return mid;
+				else	right = mid - 1;
+			}
+		}
+		return -1;
+	}
+	
+	
+	
+	/**
+	 * 查找最后一个小于等于给定值的元素
+	 * @param arr
+	 * @param value
+	 * @return
+	 */
+	public static int binarySearchFirstMini(int[] arr, int value) {
+		int left = 0;
+		int right = arr.length - 1;
+		while (left <= right) {
+			int mid = left + ((right - left) >> 1);
+			if(arr[mid] <= value) {
+				if(mid == arr.length - 1 || arr[mid + 1] > value) return mid;
+				else	left = mid + 1;
+			}  else {
+				right = mid - 1;
+			}
+		}
+		return -1;
 	}
 }
