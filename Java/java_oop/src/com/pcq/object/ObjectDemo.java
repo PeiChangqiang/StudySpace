@@ -42,4 +42,6 @@ class Person {
 		Person per = (Person)obj;//向下转型
 		return this.name.equals(per.name) && this.age == per.age; 
 	}
+	
+	
 }
