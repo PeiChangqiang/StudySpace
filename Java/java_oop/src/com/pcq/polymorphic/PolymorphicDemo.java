@@ -42,3 +42,4 @@ class Duck extends Animal {
 		System.out.println("Ñ¼ÔÚ³Ô¡£¡£¡£");
 	}
 }
+
