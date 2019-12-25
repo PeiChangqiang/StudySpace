@@ -1,4 +1,4 @@
-# Lamda表达式
+# Lambda表达式
 
 ## 一、由来
 
@@ -118,3 +118,62 @@ class Person {
 
 ## 四、内建函数式接口
 
+* **在系统中提供了java.util.function的开发包**
+
+### 1.功能型函数式接口
+
+* 有参数有返回值
+
+```java
+@FunctionalInterface
+public interface Function<T,R> {
+    public R apply(T t);
+}
+
+//使用方式
+//内建函数式接口
+class TestInerInterface {
+	public static void main(String[] args) {
+		Function<String,Boolean>  fun = "XX****ZZ" :: startsWith;
+		boolean flag = fun.apply("xx");
+		System.out.println(flag);
+	}
+}
+//适用于传入一个类型参数返回一个类型结果的方法。
+```
+
+### 2.消费型函数式接口
+
+* 只能进行数据处理而不能返回（有参数没有返回值）
+
+```java
+@FunctionalInterface
+public interface Consumer<T> {
+    public void accept(T t);
+}
+
+Consumer<String> con = System.out :: println;
+con.accept("Hello World");
+```
+
+### 3.供给型函数式接口
+
+* 没有参数但是有返回值的方法
+
+```java
+@FunctionalInterface
+public interface Supplier<T> {
+    public T get();
+}
+```
+
+### 4.断言型函数式接口
+
+* 主要进行判断处理
+
+```java
+@FunctionalInterface
+public interface Predicate<T> {
+    public boolean test(T t);
+}
+```
