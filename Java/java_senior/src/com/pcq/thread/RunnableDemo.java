@@ -8,12 +8,21 @@ package com.pcq.thread;
 public class RunnableDemo {
 
 	public static void main(String[] args) {
-		Thread t1 = new Thread(new RunThread("线程A"));
+		/*Thread t1 = new Thread(new RunThread("线程A"));
 		Thread t2 = new Thread(new RunThread("线程B"));
 		Thread t3 = new Thread(new RunThread("线程C"));
 		t1.start();
 		t2.start();
-		t3.start();
+		t3.start();*/
+		for(int j = 0; j < 4; j++) {
+			String title = "线程" + j;
+			new Thread(()->{
+			    for(int i = 0; i < 10; i++) {
+			        System.out.println(title + ": " + i);
+			    }
+			}).start();
+		}
+		
 	}
 
 }
