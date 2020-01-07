@@ -80,3 +80,57 @@ new Thread(()->{
 <img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20191225234547126.png" />
 
 * 多线程开发的本质是在于多个线程可以进行同一资源的抢占。
+
+
+
+### 3.Callable借口实现多线程
+
+* **由于传统的实现多线程的方式是没有返回值的，因此在1.5的时候java.util.concurrent包提供了新的方法call来提供返回值。**
+
+![image-20200107220344706](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200107220344706.png)
+
+```java
+package com.pcq.thread;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
+
+public class CallableDemo {
+	
+	public static void main(String[] args) throws Exception {
+		FutureTask<String> task1 = new FutureTask<String>(new CallThread("A"));
+		FutureTask<String> task2 = new FutureTask<String>(new CallThread("B"));
+		new Thread(task1).start();
+		
+		//System.out.println(task1.get());
+		new Thread(task2).start();
+		
+	}
+
+}
+class CallThread implements Callable<String> {
+
+	private String name;
+	public CallThread(String name) {
+		this.name = name;
+	}
+	public String call() throws Exception {
+		for(int i = 0; i < 10; i++) {
+			System.out.println(this.name + ": " + i);
+		}
+		return "线程" + name + "执行完毕";
+	}
+	
+}
+```
+
+* 启动start的时候调用的是call方法，调用get方法的时候，返回的是call方法的返回值。
+
+
+
+
+
+## 二、多线程运行状态
+
+![image-20200107225702661](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200107225702661.png)
+
