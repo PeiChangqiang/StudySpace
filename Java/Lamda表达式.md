@@ -21,7 +21,7 @@ interface LambdaInterface {
 
 
 
-## 二、Lamda表达式使用格式
+## 二、Lambda表达式使用格式
 
 * 没有参数：()->{};
 * 有参数：(param...)->{};

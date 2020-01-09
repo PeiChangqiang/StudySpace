@@ -14,9 +14,15 @@ public class ExceptionDemo {
 		} catch (MyException e) {
 			e.printStackTrace();
 		}
+		
+		new ExceptionDemo().testRunException();
 	}
 	
 	
+	
+	void testRunException() {
+		throw new Excep("运行时异常");
+	}
 
 }
 
@@ -44,6 +50,14 @@ class Mymath {
 //自定义异常
 class MyException extends Exception {
 	public MyException(String msg) {
+		super(msg);
+	}
+}
+
+
+
+class Excep extends RuntimeException {
+	public Excep(String msg) {
 		super(msg);
 	}
 }

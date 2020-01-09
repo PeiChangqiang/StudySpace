@@ -14,7 +14,7 @@ interface IFunc<T,P> {
 		IFunc<String, Integer> fun = String :: valueOf;
 		String str = fun.change(10);
 		System.out.println(str.length());
-	}
+	};
 	T change(P p);
 }
 

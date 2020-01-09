@@ -37,3 +37,15 @@ public class PracticeDemo {
 }
 
 
+
+class TestLambda {
+	public static void main(String[] args) {
+		Consumer<String> c1 = (s) -> System.out.println(s);
+		c1.accept("x");
+		//只访问方法而不需要实例化对象，并且参数都可以省略
+		Consumer<String> c2 = System.out :: println;
+		c2.accept("x");
+	}
+}
+
+
