@@ -2,7 +2,9 @@ package com.pcq.lambda;
 
 public class LambdaDemo {
 	public static void main(String[] args) {
-
+		new Thread(() -> {
+			
+		}).start();
 	}
 	
 }
