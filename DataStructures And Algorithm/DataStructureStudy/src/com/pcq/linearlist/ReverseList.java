@@ -15,10 +15,11 @@ public class ReverseList {
 		Node pre = null;
         Node next = null;
         while (head != null) {
-            next = head.getNext();
-            head.setNext(pre);
-            pre = head;
-            head = next;
+            next = head.getNext();//获得当前节点下一个节点，临时保存
+            head.setNext(pre);//当前节点指向前驱节点
+            //后两步是指针后移
+            pre = head;//前驱节点变成当前节点
+            head = next;//下一个节点变成当前节点
         }
         return pre;
 	}
@@ -27,6 +28,8 @@ public class ReverseList {
 	public static void main(String[] args) {
 		Node head = new Node(0);
 		Node node1 = new Node(1);
+		Node node2 = new Node(2);
+        node1.setNext(node2);
 		//Node node2 = new Node(2);
 		//Node node3 = new Node(3);
  
