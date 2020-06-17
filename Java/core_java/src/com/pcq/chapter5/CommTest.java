@@ -10,7 +10,9 @@ public class CommTest {
         Student stu3 = new Student();
         stu3.setId("00122s");
         System.out.println(stu3.hashCode());*/
-
+        int x = 1;
+        int y = 3;
+        int z = x + y;
         String a = new String("abc");
         String b = new String("abc");
         StringBuilder sb = new StringBuilder(a);
@@ -18,6 +20,13 @@ public class CommTest {
         System.out.println(a.hashCode() == b.hashCode());
         System.out.println(sb.hashCode());
         System.out.println(a.hashCode());
+        test();
 
+    }
+
+    static  void test() {
+        for (int i = 0; i < 20; i++) {
+            System.out.println(i);
+        }
     }
 }
