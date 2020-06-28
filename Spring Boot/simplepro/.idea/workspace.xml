@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b177d2bd-8ab0-4695-abde-0351e7990a45" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../DataStructures And Algorithm/DataStructureStudy/src/com/pcq/search/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DataStructures And Algorithm/DataStructureStudy/src/com/pcq/search/BinarySearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Spring Boot入门.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring Boot入门.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Java/SystemStudy/java_senior/java_senior.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../~$ring Boot入门.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +33,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1dfVXRGGWlJRgs01Fno9zmWRTX6" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -46,7 +46,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DataStructures And Algorithm/DataStructureStudy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Java/SystemStudy/java_senior" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunManager" selected="Application.MainApplication">
@@ -101,6 +104,7 @@
       <workItem from="1592816186948" duration="2649000" />
       <workItem from="1592874059179" duration="10131000" />
       <workItem from="1592892652566" duration="7794000" />
+      <workItem from="1593306428526" duration="7388000" />
     </task>
     <task id="LOCAL-00001" summary="初始化一个小项目">
       <created>1592817591078</created>
@@ -176,10 +180,10 @@
       <screen x="0" y="0" width="1536" height="832" />
     </state>
     <state x="49" y="165" width="1350" height="586" key="DiffContextDialog/0.0.1536.832@0.0.1536.832" timestamp="1592892075205" />
-    <state x="479" y="179" key="FileChooserDialogImpl" timestamp="1592892578180">
+    <state x="479" y="179" key="FileChooserDialogImpl" timestamp="1593333527901">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
-    <state x="479" y="179" key="FileChooserDialogImpl/0.0.1536.832@0.0.1536.832" timestamp="1592892578180" />
+    <state x="479" y="179" key="FileChooserDialogImpl/0.0.1536.832@0.0.1536.832" timestamp="1593333527901" />
     <state width="1226" height="15" key="GridCell.Tab.0.bottom" timestamp="1592892595537">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
@@ -196,10 +200,10 @@
       <screen x="0" y="0" width="1536" height="832" />
     </state>
     <state width="1226" height="15" key="GridCell.Tab.0.right/0.0.1536.832@0.0.1536.832" timestamp="1592892595537" />
-    <state x="170" y="38" width="992" height="707" key="SettingsEditor" timestamp="1592879279580">
+    <state x="49" y="58" width="992" height="707" key="SettingsEditor" timestamp="1593333734642">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
-    <state x="170" y="38" width="992" height="707" key="SettingsEditor/0.0.1536.832@0.0.1536.832" timestamp="1592879279580" />
+    <state x="49" y="58" width="992" height="707" key="SettingsEditor/0.0.1536.832@0.0.1536.832" timestamp="1593333734642" />
     <state x="361" y="153" key="Vcs.Push.Dialog.v2" timestamp="1592818017284">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
@@ -208,13 +212,13 @@
       <screen x="0" y="0" width="1536" height="832" />
     </state>
     <state x="422" y="170" key="VcsDiffUtil.ChangesDialog/0.0.1536.832@0.0.1536.832" timestamp="1592892012496" />
-    <state x="461" y="245" key="com.intellij.ide.util.TipDialog" timestamp="1592874053006">
+    <state x="451" y="245" key="com.intellij.ide.util.TipDialog" timestamp="1593306439291">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
-    <state x="461" y="245" key="com.intellij.ide.util.TipDialog/0.0.1536.832@0.0.1536.832" timestamp="1592874053006" />
-    <state x="178" y="121" key="new project wizard" timestamp="1592904985554">
+    <state x="451" y="245" key="com.intellij.ide.util.TipDialog/0.0.1536.832@0.0.1536.832" timestamp="1593306439291" />
+    <state x="135" y="127" key="new project wizard" timestamp="1593307225049">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
-    <state x="178" y="121" key="new project wizard/0.0.1536.832@0.0.1536.832" timestamp="1592904985554" />
+    <state x="135" y="127" key="new project wizard/0.0.1536.832@0.0.1536.832" timestamp="1593307225049" />
   </component>
 </project>
