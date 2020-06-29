@@ -1,0 +1,5 @@
+一、Java基础复习，jdbc,Servlet,Jsp。
+二、框架部分：Spring,Spring MVC,Mybatis，Spring Boot。
+三、多线程：咕泡学院
+四、数据结构和算法（极客时间）
+五、JVM：深入理解Java虚拟机

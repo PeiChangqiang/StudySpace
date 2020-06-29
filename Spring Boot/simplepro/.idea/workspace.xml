@@ -2,13 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b177d2bd-8ab0-4695-abde-0351e7990a45" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/../../Java/SystemStudy/java_senior/java_senior.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> f7c75f617ee7aa800f34529fe4e3278d55b8b063
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -16,14 +28,25 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+<<<<<<< HEAD
         <option name="localRepository" value="C:\Users\pcq\.m2\repository" />
         <option name="mavenHome" value="$PROJECT_DIR$/../../../ApplicationSoftware/apache-maven-3.3.9/bin" />
         <option name="userSettingsFile" value="D:\ApplicationSoftware\apache-maven-3.3.9\conf\settings.xml" />
+=======
+        <option name="mavenHome" value="D:/ApplicationSoftware/maven/apache-maven-3.6.3" />
+>>>>>>> f7c75f617ee7aa800f34529fe4e3278d55b8b063
       </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="1dfVXRGGWlJRgs01Fno9zmWRTX6" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -31,10 +54,46 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Java/SystemStudy/java_senior" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RunManager" selected="Application.MainApplication">
+    <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pcq.mainApp.MainApplication" />
+      <module name="springboot-01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pcq.mainApp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springboot-01" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.pcq.mainApp.MainApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainApplication" />
+      </list>
+    </recent_temporary>
+>>>>>>> f7c75f617ee7aa800f34529fe4e3278d55b8b063
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -46,8 +105,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1592816176344</updated>
+<<<<<<< HEAD
       <workItem from="1592816186948" duration="1771000" />
       <workItem from="1592829375661" duration="614000" />
+=======
+      <workItem from="1592816186948" duration="2649000" />
+      <workItem from="1592874059179" duration="10131000" />
+      <workItem from="1592892652566" duration="7794000" />
+      <workItem from="1593306428526" duration="7388000" />
+>>>>>>> f7c75f617ee7aa800f34529fe4e3278d55b8b063
     </task>
     <task id="LOCAL-00001" summary="初始化一个小项目">
       <created>1592817591078</created>
@@ -56,48 +122,112 @@
       <option name="project" value="LOCAL" />
       <updated>1592817591078</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="test Spring Boot程序并且通过package命令打包单独运行">
+      <created>1592892259617</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592892259618</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:D:/StudySpace/Spring Boot/simplepro" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化一个小项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始化一个小项目" />
+    <MESSAGE value="test Spring Boot程序并且通过package命令打包单独运行" />
+    <option name="LAST_COMMIT_MESSAGE" value="test Spring Boot程序并且通过package命令打包单独运行" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="78" key="#Notifications" timestamp="1592817993646">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
     <state x="361" y="78" key="#Notifications/0.0.1536.832@0.0.1536.832" timestamp="1592817993646" />
-    <state x="183" y="17" width="953" height="796" key="CommitChangelistDialog2" timestamp="1592817589148">
+    <state x="183" y="17" width="953" height="796" key="CommitChangelistDialog2" timestamp="1592892257242">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
-    <state x="183" y="17" width="953" height="796" key="CommitChangelistDialog2/0.0.1536.832@0.0.1536.832" timestamp="1592817589148" />
-    <state x="49" y="105" width="1350" height="646" key="DiffContextDialog" timestamp="1592817678456">
+    <state x="183" y="17" width="953" height="796" key="CommitChangelistDialog2/0.0.1536.832@0.0.1536.832" timestamp="1592892257242" />
+    <state x="49" y="165" width="1350" height="586" key="DiffContextDialog" timestamp="1592892075205">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
-    <state x="49" y="105" width="1350" height="646" key="DiffContextDialog/0.0.1536.832@0.0.1536.832" timestamp="1592817678456" />
-    <state x="479" y="179" key="FileChooserDialogImpl" timestamp="1592816686316">
+    <state x="49" y="165" width="1350" height="586" key="DiffContextDialog/0.0.1536.832@0.0.1536.832" timestamp="1592892075205" />
+    <state x="479" y="179" key="FileChooserDialogImpl" timestamp="1593333527901">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
-    <state x="479" y="179" key="FileChooserDialogImpl/0.0.1536.832@0.0.1536.832" timestamp="1592816686316" />
-    <state x="226" y="90" width="992" height="707" key="SettingsEditor" timestamp="1592816895146">
+    <state x="479" y="179" key="FileChooserDialogImpl/0.0.1536.832@0.0.1536.832" timestamp="1593333527901" />
+    <state width="1226" height="15" key="GridCell.Tab.0.bottom" timestamp="1592892595537">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
-    <state x="226" y="90" width="992" height="707" key="SettingsEditor/0.0.1536.832@0.0.1536.832" timestamp="1592816895146" />
+    <state width="1226" height="15" key="GridCell.Tab.0.bottom/0.0.1536.832@0.0.1536.832" timestamp="1592892595537" />
+    <state width="1226" height="15" key="GridCell.Tab.0.center" timestamp="1592892595537">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state width="1226" height="15" key="GridCell.Tab.0.center/0.0.1536.832@0.0.1536.832" timestamp="1592892595537" />
+    <state width="1226" height="15" key="GridCell.Tab.0.left" timestamp="1592892595537">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state width="1226" height="15" key="GridCell.Tab.0.left/0.0.1536.832@0.0.1536.832" timestamp="1592892595537" />
+    <state width="1226" height="15" key="GridCell.Tab.0.right" timestamp="1592892595537">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state width="1226" height="15" key="GridCell.Tab.0.right/0.0.1536.832@0.0.1536.832" timestamp="1592892595537" />
+    <state x="49" y="58" width="992" height="707" key="SettingsEditor" timestamp="1593333734642">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state x="49" y="58" width="992" height="707" key="SettingsEditor/0.0.1536.832@0.0.1536.832" timestamp="1593333734642" />
     <state x="361" y="153" key="Vcs.Push.Dialog.v2" timestamp="1592818017284">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
     <state x="361" y="153" key="Vcs.Push.Dialog.v2/0.0.1536.832@0.0.1536.832" timestamp="1592818017284" />
-    <state x="422" y="170" key="VcsDiffUtil.ChangesDialog" timestamp="1592817643896">
+    <state x="422" y="170" key="VcsDiffUtil.ChangesDialog" timestamp="1592892012496">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
-    <state x="422" y="170" key="VcsDiffUtil.ChangesDialog/0.0.1536.832@0.0.1536.832" timestamp="1592817643896" />
-    <state x="461" y="245" key="com.intellij.ide.util.TipDialog" timestamp="1592816214403">
+    <state x="422" y="170" key="VcsDiffUtil.ChangesDialog/0.0.1536.832@0.0.1536.832" timestamp="1592892012496" />
+    <state x="451" y="245" key="com.intellij.ide.util.TipDialog" timestamp="1593306439291">
       <screen x="0" y="0" width="1536" height="832" />
     </state>
-    <state x="461" y="245" key="com.intellij.ide.util.TipDialog/0.0.1536.832@0.0.1536.832" timestamp="1592816214403" />
+    <state x="451" y="245" key="com.intellij.ide.util.TipDialog/0.0.1536.832@0.0.1536.832" timestamp="1593306439291" />
+    <state x="135" y="127" key="new project wizard" timestamp="1593307225049">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state x="135" y="127" key="new project wizard/0.0.1536.832@0.0.1536.832" timestamp="1593307225049" />
   </component>
 </project>
