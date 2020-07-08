@@ -11,8 +11,12 @@ public class AServlet implements Servlet {
         String v = servletConfig.getInitParameter("p1");
         System.out.println("init.......");
         System.out.println(servletName + ",p1 : " + v);
+        init();
     }
 
+    public void init() {
+
+    }
     @Override
     public ServletConfig getServletConfig() {
         System.out.println("ServletConfig.......");
