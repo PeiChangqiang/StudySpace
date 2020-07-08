@@ -21,4 +21,12 @@
         <servlet-name>AServlet</servlet-name>
         <url-pattern>/aservlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>BServlet</servlet-name>
+        <servlet-class>com.pcq.web.BServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BServlet</servlet-name>
+        <url-pattern>/bservlet</url-pattern>
+    </servlet-mapping>
 </web-app>

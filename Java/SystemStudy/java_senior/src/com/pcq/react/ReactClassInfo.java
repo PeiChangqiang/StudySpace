@@ -1,12 +1,15 @@
 package com.pcq.react;
 
 
+import com.pcq.inter.IChannalService;
+import com.pcq.inter.IMsgService;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
-public class ReactClassInfo extends BaseAbsClass implements IChannalService,IMsgService {
+public class ReactClassInfo extends BaseAbsClass implements IChannalService, IMsgService {
 
     public ReactClassInfo(String s, int i) {
 
@@ -74,6 +77,11 @@ public class ReactClassInfo extends BaseAbsClass implements IChannalService,IMsg
     @Override
     public boolean isConnect() {
         return false;
+    }
+
+    @Override
+    public void close() {
+
     }
 
     @Override

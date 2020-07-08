@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="cglib">
+    <CLASSES>
+      <root url="file://$MAVEN_REPOSITORY$/cglib/cglib/3.2.6" />
+      <root url="file://$MAVEN_REPOSITORY$/cglib/cglib-asm" />
+      <root url="file://$MAVEN_REPOSITORY$/cglib/cglib-parent" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$MAVEN_REPOSITORY$/cglib/cglib/3.2.6" recursive="false" />
+  </library>
+</component>
