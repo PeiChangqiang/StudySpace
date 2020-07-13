@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcq.entity.TeacherMapper">
+
+    <!--
+    <select id="findTeacherById" resultMap="TeacherStudents">
+        SELECT s.id sid, s.name sname, s.tid stid, t.id tid,t.name tname FROM student s, teacher t WHERE s.tId = t.id and t.id = #{id}
+    </select>
+    <resultMap id="TeacherStudents" type="Teacher">
+        <id column="tid" property="id"/>
+        <result column="tname" property="name"/>
+        <collection property="students" ofType="Student">
+            <id column="sid" property="id"/>
+            <result column="sname" property="name"/>
+        </collection>
+    </resultMap>-->
+
+    <select id="findTeacherById" resultMap="TeacherStudents">
+        select * from teacher where id = #{id}
+    </select>
+    <resultMap id="TeacherStudents" type="Teacher">
+        <id column="id" property="id"/>
+        <collection property="students" javaType="ArrayList" ofType="Student" column="id" select="com.pcq.entity.StudentMapper.findStudentsByTid">
+        </collection>
+    </resultMap>
+</mapper>
