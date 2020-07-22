@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties"/>
+    <typeAliases>
+        <package name="com.pcq.entity"/><!--默认该包下所有实体类在mapper配置文件中的别名就是类名-->
+    </typeAliases>
+    <!--可以配置多个环境，也就是多个数据源，一个sqlSessionFactory对应一个环境-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/><!--事务管理类型-->
+            <dataSource type="POOLED"><!--数据源类型 连接池方式，如果是UNPPPLED则每次执行都会申请新的链接，使用完毕再关闭连接。-->
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}" />
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper class="com.pcq.dao.UserDao"/>
+        <mapper resource="student-mapper.xml"/>
+        <mapper resource="teacher-mapper.xml"/>
+    </mappers>
+</configuration>

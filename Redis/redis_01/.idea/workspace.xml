@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="599300b7-62ed-4699-b583-a6c2deb758a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Redis-x64-3.2.100/dump.rdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis_01.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pcq/entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pcq/listener/RedisMessageListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/pcq/jedis/ApplicationContextTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/pcq/jedis/JedisTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/pcq/jedis/TestListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/pcq/jedis/TestMulti.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/ApplicationSoftware/maven/apache-maven-3.6.3" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ec6GvJL0LkuJcqcbTMPPZ0yiNa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RunManager" selected="JUnit.TestListener.testListener">
+    <configuration name="JedisTest.testJedisPool" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="redis_01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pcq.jedis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pcq.jedis" />
+      <option name="MAIN_CLASS_NAME" value="com.pcq.jedis.JedisTest" />
+      <option name="METHOD_NAME" value="testJedisPool" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JedisTest.testPipelined" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="redis_01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pcq.jedis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pcq.jedis" />
+      <option name="MAIN_CLASS_NAME" value="com.pcq.jedis.JedisTest" />
+      <option name="METHOD_NAME" value="testPipelined" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestListener.testListener" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="redis_01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pcq.jedis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pcq.jedis" />
+      <option name="MAIN_CLASS_NAME" value="com.pcq.jedis.TestListener" />
+      <option name="METHOD_NAME" value="testListener" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMulti.testMulti" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="redis_01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pcq.jedis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pcq.jedis" />
+      <option name="MAIN_CLASS_NAME" value="com.pcq.jedis.TestMulti" />
+      <option name="METHOD_NAME" value="testMulti" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMulti.testPipelined" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="redis_01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pcq.jedis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pcq.jedis" />
+      <option name="MAIN_CLASS_NAME" value="com.pcq.jedis.TestMulti" />
+      <option name="METHOD_NAME" value="testPipelined" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestListener.testListener" />
+        <item itemvalue="JUnit.TestMulti.testPipelined" />
+        <item itemvalue="JUnit.JedisTest.testPipelined" />
+        <item itemvalue="JUnit.JedisTest.testJedisPool" />
+        <item itemvalue="JUnit.TestMulti.testMulti" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="599300b7-62ed-4699-b583-a6c2deb758a9" name="Default Changelist" comment="" />
+      <created>1594608441531</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594608441531</updated>
+      <workItem from="1594608447549" duration="15835000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="78" key="#Live_Templates" timestamp="1594615892991">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state x="361" y="78" key="#Live_Templates/0.0.1536.832@0.0.1536.832" timestamp="1594615892991" />
+    <state x="309" y="86" key="#Project_Structure" timestamp="1594619627538">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state x="309" y="86" key="#Project_Structure/0.0.1536.832@0.0.1536.832" timestamp="1594619627538" />
+    <state x="574" y="125" key="#com.intellij.ide.util.MemberChooser" timestamp="1594624908158">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state x="574" y="125" key="#com.intellij.ide.util.MemberChooser/0.0.1536.832@0.0.1536.832" timestamp="1594624908158" />
+    <state width="1493" height="264" key="GridCell.Tab.0.bottom" timestamp="1594701232534">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state width="1493" height="264" key="GridCell.Tab.0.bottom/0.0.1536.832@0.0.1536.832" timestamp="1594701232534" />
+    <state width="1493" height="264" key="GridCell.Tab.0.center" timestamp="1594701232534">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state width="1493" height="264" key="GridCell.Tab.0.center/0.0.1536.832@0.0.1536.832" timestamp="1594701232534" />
+    <state width="1493" height="264" key="GridCell.Tab.0.left" timestamp="1594701232534">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state width="1493" height="264" key="GridCell.Tab.0.left/0.0.1536.832@0.0.1536.832" timestamp="1594701232534" />
+    <state width="1493" height="264" key="GridCell.Tab.0.right" timestamp="1594701232534">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state width="1493" height="264" key="GridCell.Tab.0.right/0.0.1536.832@0.0.1536.832" timestamp="1594701232534" />
+    <state width="1493" height="264" key="GridCell.Tab.1.bottom" timestamp="1594701232535">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state width="1493" height="264" key="GridCell.Tab.1.bottom/0.0.1536.832@0.0.1536.832" timestamp="1594701232535" />
+    <state width="1493" height="264" key="GridCell.Tab.1.center" timestamp="1594701232534">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state width="1493" height="264" key="GridCell.Tab.1.center/0.0.1536.832@0.0.1536.832" timestamp="1594701232534" />
+    <state width="1493" height="264" key="GridCell.Tab.1.left" timestamp="1594701232534">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state width="1493" height="264" key="GridCell.Tab.1.left/0.0.1536.832@0.0.1536.832" timestamp="1594701232534" />
+    <state width="1493" height="264" key="GridCell.Tab.1.right" timestamp="1594701232534">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state width="1493" height="264" key="GridCell.Tab.1.right/0.0.1536.832@0.0.1536.832" timestamp="1594701232534" />
+    <state x="349" y="154" key="IDE.errors.dialog" timestamp="1594608599981">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state x="349" y="154" key="IDE.errors.dialog/0.0.1536.832@0.0.1536.832" timestamp="1594608599981" />
+    <state x="272" y="62" key="SettingsEditor" timestamp="1594608652446">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state x="272" y="62" key="SettingsEditor/0.0.1536.832@0.0.1536.832" timestamp="1594608652446" />
+    <state x="461" y="245" key="com.intellij.ide.util.TipDialog" timestamp="1594608461941">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state x="461" y="245" key="com.intellij.ide.util.TipDialog/0.0.1536.832@0.0.1536.832" timestamp="1594608461941" />
+    <state x="431" y="153" width="672" height="678" key="search.everywhere.popup" timestamp="1594625666662">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state x="431" y="153" width="672" height="678" key="search.everywhere.popup/0.0.1536.832@0.0.1536.832" timestamp="1594625666662" />
+  </component>
+</project>

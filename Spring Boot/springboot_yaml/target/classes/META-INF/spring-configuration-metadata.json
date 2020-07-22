@@ -1,0 +1,47 @@
+{
+  "groups": [
+    {
+      "name": "person",
+      "type": "com.example.pcq.springboot_yaml.bean.Person",
+      "sourceType": "com.example.pcq.springboot_yaml.bean.Person"
+    }
+  ],
+  "properties": [
+    {
+      "name": "person.age",
+      "type": "java.lang.Integer",
+      "sourceType": "com.example.pcq.springboot_yaml.bean.Person"
+    },
+    {
+      "name": "person.b",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.example.pcq.springboot_yaml.bean.Person"
+    },
+    {
+      "name": "person.date",
+      "type": "java.util.Date",
+      "sourceType": "com.example.pcq.springboot_yaml.bean.Person"
+    },
+    {
+      "name": "person.dog",
+      "type": "com.example.pcq.springboot_yaml.bean.Dog",
+      "sourceType": "com.example.pcq.springboot_yaml.bean.Person"
+    },
+    {
+      "name": "person.list",
+      "type": "java.util.List<java.lang.Object>",
+      "sourceType": "com.example.pcq.springboot_yaml.bean.Person"
+    },
+    {
+      "name": "person.map",
+      "type": "java.util.Map<java.lang.String,java.lang.Object>",
+      "sourceType": "com.example.pcq.springboot_yaml.bean.Person"
+    },
+    {
+      "name": "person.name",
+      "type": "java.lang.String",
+      "sourceType": "com.example.pcq.springboot_yaml.bean.Person"
+    }
+  ],
+  "hints": []
+}

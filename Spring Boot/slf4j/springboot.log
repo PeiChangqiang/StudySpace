@@ -1,0 +1,11 @@
+2020-07-10 16:25:32.060  INFO 8268 --- [main] com.pcq.slf4j.Slf4jApplicationTests      : Starting Slf4jApplicationTests on LAPTOP-8PKJLF6F with PID 8268 (started by pcq in D:\StudySpace\Spring Boot\slf4j)
+2020-07-10 16:25:32.062 DEBUG 8268 --- [main] com.pcq.slf4j.Slf4jApplicationTests      : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-10 16:25:32.067  INFO 8268 --- [main] com.pcq.slf4j.Slf4jApplicationTests      : No active profile set, falling back to default profiles: default
+2020-07-10 16:25:33.569  INFO 8268 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-10 16:25:33.849  INFO 8268 --- [main] com.pcq.slf4j.Slf4jApplicationTests      : Started Slf4jApplicationTests in 2.312 seconds (JVM running for 4.019)
+2020-07-10 16:25:34.053 TRACE 8268 --- [main] com.pcq.slf4j.Slf4jApplicationTests      : trace日志。。。
+2020-07-10 16:25:34.053 DEBUG 8268 --- [main] com.pcq.slf4j.Slf4jApplicationTests      : debug日志。。。
+2020-07-10 16:25:34.053  INFO 8268 --- [main] com.pcq.slf4j.Slf4jApplicationTests      : info日志。。。
+2020-07-10 16:25:34.053  WARN 8268 --- [main] com.pcq.slf4j.Slf4jApplicationTests      : warn日志。。。
+2020-07-10 16:25:34.054 ERROR 8268 --- [main] com.pcq.slf4j.Slf4jApplicationTests      : error日志。。。
+2020-07-10 16:25:34.073  INFO 8268 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

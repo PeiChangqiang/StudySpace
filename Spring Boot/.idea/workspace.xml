@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bde756eb-e3a5-409e-869d-18d5547bc4ea" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Java/SystemStudy/~$多线程.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Java/SystemStudy/~$多线程.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java/SystemStudy/多线程.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Java/SystemStudy/多线程.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simplepro/src/main/java/com/pcq/mainApp/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/simplepro/src/main/java/com/pcq/mainApp/MainApplication.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1eORDiPu67gDCqYhoaB4tFqgpfC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="SpringbootInitApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Spring Boot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.pcq.springboot_init.SpringbootInitApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bde756eb-e3a5-409e-869d-18d5547bc4ea" name="Default Changelist" comment="" />
+      <created>1594190534255</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594190534255</updated>
+      <workItem from="1594190551882" duration="741000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1059" y="440" key="FileChooserDialogImpl" timestamp="1594192155049">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1059" y="440" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1594192155049" />
+    <state x="654" y="360" key="new project wizard" timestamp="1594192165628">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="654" y="360" key="new project wizard/0.0.2560.1400@0.0.2560.1400" timestamp="1594192165628" />
+  </component>
+</project>
