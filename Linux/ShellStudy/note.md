@@ -20,7 +20,7 @@
 
 * 只读变量：**readonly** a=100; 也就是常量，声明时必须赋值，之后无法修改。
 
-* 删除变量：**unset** variable_name 。该命令对函数同样适用。但是不能删除只读变量。
+* 删除变量：**unset** variable_name 。该命令对函数同样适用。**但是不能删除只读变量**。
 
 #### 3.变量类型
 
@@ -271,12 +271,295 @@ fi
 
 #### 1.if语句
 
+```shell
+#if语句
+if condition
+then
+ command...
+fi
+
+#if else
+if condition
+then
+ command...
+ else
+ command...
+fi
+
+#if else if
+if condition
+then
+command...
+elif condition
+then
+command...
+else
+ command
+ fi
+```
+
 #### 2.for循环
+
+* 语法格式
+
+```shell
+for var in item1 item2....
+do
+ command...
+done
+
+#示例
+#输出1 2 3 4 5
+#!/bin/bash
+for item in 1 2 3 4 5 5
+do
+echo ${item}
+done
+
+
+#输出 hello world
+for item in "hello world"
+do 
+echo "${item}"
+done
+
+#!/bin/bash
+for((i=1;i<=5;i++));do
+    echo "这是第 $i 次调用";
+done;
+```
+
+
 
 #### 3.while语句
 
+* 语法格式
+
+```shell
+while condition
+do
+ command...
+done
+```
+
+* 示例
+
+```shell
+echo "输入你最喜欢的网站"
+while read website
+do
+echo "是的，${website}是最好的网站！"
+echo "按下ctrl + d退出"
+done
+```
+
+* 无限循环
+
+```shell
+#1
+while : 
+do 
+command...
+done
+
+#2
+while true
+do
+command...
+done
+
+#3
+for(( ; ; ))
+```
+
+
+
 #### 4.until循环
+
+* 语法格式
+
+```shell
+until condition
+do
+command...
+done
+```
+
+
 
 #### 5.case语句
 
-​	
+* 语法格式
+
+```shell
+#模式支持正则表达式
+case value in
+model1) command...
+;;
+model2) command...
+;;
+model3) command...
+;;
+esac
+```
+
+* 示例
+
+```shell
+echo "请输入一个0-3的数字"
+read num
+case ${num} in
+0) echo "你输入了0"
+;;
+1) echo "你输入了1"
+;;
+2) echo "你输入了2"
+;;
+3) echo "你输入了3"
+*) echo "输入不合法，请按照规定输入"
+;;
+esac
+```
+
+#### 6.跳出循环
+
+* break 
+
+```shell
+while : 
+do
+echo "请输入1-3的数字"
+read num
+case ${num} in
+1|2|3) echo "你输入了${num}"
+;;
+*) echo "你输入的数字不在1-3之内"
+break
+;;
+esac
+done
+```
+
+* continue
+
+​	该语句只会跳出当前循环，不会跳出所有循环
+
+```shell
+#!/bin/bash
+while :
+do
+    echo -n "输入 1 到 5 之间的数字: "
+    read aNum
+    case $aNum in
+        1|2|3|4|5) echo "你输入的数字为 $aNum!"
+        ;;
+        *) echo "你输入的数字不是 1 到 5 之间的!"
+            continue
+            echo "游戏结束" #该语句永远不会被执行
+        ;;
+    esac
+done
+```
+
+### 七、Shell函数
+
+* 定义：funName() {}
+
+  **函数的返回值可以通过return语句显示说明。如果不加return语句，将以最后一条命令的执行结果作为返回值**
+
+  ```shell
+  #!/bin/bash
+  mutile() {
+  	echo "请输入第一个数："
+  	read num1
+  	echo "请输入第二个数："
+  	read num2
+  	num=`expr ${num1} \* ${num2}`
+  	return ${num}
+  }
+  mutile
+  echo "函数的返回值是： $? !"
+  ```
+
+* 函数参数
+
+```shell
+funparam() {
+	echo "第一个参数 ${1}"
+	echo "第二个参数 ${2}"
+}
+funparam 1 2 #输出：第一个参数1 第二个参数2  当参数大于等于10时，获取参数必须加大括号
+```
+
+* 其它特殊字符处理参数
+
+| 参数处理 | 说明                                                         |
+| :------- | :----------------------------------------------------------- |
+| $#       | 传递到脚本或函数的参数个数                                   |
+| $*       | 以一个单字符串显示所有向脚本传递的参数                       |
+| $$       | 脚本运行的当前进程ID号                                       |
+| $!       | 后台运行的最后一个进程的ID号                                 |
+| $@       | 与$*相同，但是使用时加引号，并在引号中返回每个参数。         |
+| $-       | 显示Shell使用的当前选项，与set命令功能相同。                 |
+| $?       | 显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。 |
+
+### 八、输入输出重定向
+
+* 重定向命令列表
+
+| 命令            | 说明                                               |
+| :-------------- | :------------------------------------------------- |
+| command > file  | 将输出重定向到 file。                              |
+| command < file  | 将输入重定向到 file。                              |
+| command >> file | 将输出以追加的方式重定向到 file。                  |
+| n > file        | 将文件描述符为 n 的文件重定向到 file。             |
+| n >> file       | 将文件描述符为 n 的文件以追加的方式重定向到 file。 |
+| n >& m          | 将输出文件 m 和 n 合并。                           |
+| n <& m          | 将输入文件 m 和 n 合并。                           |
+| << tag          | 将开始标记 tag 和结束标记 tag 之间的内容作为输入。 |
+
+#### 1.输出重定向
+
+```shell
+#终端不会有任何输出，因为输出被默认的标准输出（终端）重定向到了test.txt文件中
+echo "xxx" > test.txt
+echo "yyy" > test.txt #会覆盖上一条xxx
+echo "zzz" >> test.txt #以追加的方式输出zzz重定向到test.txt文件中
+#其它实例
+who > user.txt
+date >> user.txt
+```
+
+#### 2.输入重定向
+
+```shell
+#统计user.txt文件的行数 终端会输出文件名
+wc -l user.txt
+#使用输入重定向的方式 终端不会输出文件名，它仅仅知道从标准输入读取内容
+wc -l < user.txt
+#也可以输入输出连用
+wc -l < user.txt > result.txt #从user.txt读取内容执行命令 输出到result.txt中
+```
+
+#### 3./dev/null文件
+
+* 如果想要禁止在屏幕输出命令执行结果，则可以
+
+```shell
+#/dev/null是一个特殊的文件，所有写到这个文件的内容都会被丢弃，如果去读取它，自然什么也读取不到
+command > /dev/null 
+```
+
+### 九、文件包含
+
+shell允许包含外部文件脚本，这样可以将公共的代码作为一个独立的文件被引用。
+
+* 语法格式
+
+```shell
+#1
+. filename #. 和filename之间有空格
+
+#2
+source filename
+```
