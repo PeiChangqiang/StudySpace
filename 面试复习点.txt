@@ -1,5 +1,6 @@
-一、Java基础复习，jdbc,Servlet,Jsp。
-二、框架部分：Spring,Spring MVC,Mybatis，Spring Boot。
-三、多线程：咕泡学院
+一、Java基础复习，jdbc,Servlet,Jsp。(5天)
+二、框架部分：Spring,Spring MVC,Mybatis， Spring Boot。（7天) 
+三、多线程：咕泡学院（5天）每天一课
 四、数据结构和算法（极客时间）
-五、JVM：深入理解Java虚拟机
+五、JVM：深入理解Java虚拟机（每天2小时）
+六、面试手册（每天1小时）
