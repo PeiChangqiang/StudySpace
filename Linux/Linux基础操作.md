@@ -47,13 +47,55 @@ lsblk
 
 #查看网卡
 mii-tool 网卡名
+
+#查看主机名
+hostname
 ```
 
 
 
 ## 三. Shell介绍
 
+```shell
+#查看系统支持哪些shell
+cat /etc/shells
+#查看当前系统使用的shell
+echo $SHELL
+```
+
+
+
 ## 四. 执行命令
+
+* 输入命令回车后，就是shell程序找到键入命令对应的可执行程序或者代码，分析后交给内核分配资源运行。
+
+* 命令的分类
+
+  * 内部命令：shell自带的，通过某种命令形式提供
+
+    * help ：内部命令列表
+    * enable cmd ： 启动内部命令
+    * enable -n cmd ：禁用内部命令
+    * enable -n ：查看所有禁用的内部命令
+
+  * 外部命令：在文件系统路径下对应的可执行程序文件
+
+    * 查看路径：which -a|--skip-alias; whereis
+
+    ```shell
+    #查看外部命令init的文件路径
+    which init
+    whereis init
+    ```
+
+* 判断指定的命令是内部或者外部命令 type Command
+
+```shell
+#判断pwd是否是内部命令
+type pwd
+```
+
+注：优先执行内部命令，然后执行外部命令。内部命令的执行更快，执行外部命令时需要找到这个外部命令的路径，因此耗时，效率低。
 
 ## 五. 简单命令
 
