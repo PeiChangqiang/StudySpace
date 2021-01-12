@@ -2,8 +2,7 @@
 .project
 .classpath
 .settings
-/.metadata/
-.metadata
+
 
 ### Java template
 *.class
