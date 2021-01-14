@@ -3,22 +3,6 @@
 .classpath
 .settings
 
-
-### Java template
-*.class
-
-# Package Files #
-*.jar
-*.war
-
-### Maven template
-*target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
+/.metadata
+*.metadata
 
