@@ -6,6 +6,6 @@ public class StringUtilsTest {
 
 	@Test
 	public void simpleTest() {
-		
+		System.out.println("this is a simple test...");
 	}
 }
