@@ -7,11 +7,17 @@
   <description>java高级以及相关学习测试</description>
   <dependencies>
 	<dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>6.14.3</version>
-      <scope>test</scope>
-    </dependency>
+	    <groupId>org.testng</groupId>
+	    <artifactId>testng</artifactId>
+	    <version>6.14.3</version>
+	    <scope>test</scope>
+	 </dependency>
+	 <dependency>
+	    <groupId>org.jmockit</groupId>
+	    <artifactId>jmockit</artifactId>
+	    <version>1.36</version>
+	    <scope>test</scope>
+	  </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -25,6 +31,18 @@
                 </suiteXmlFiles>
             </configuration>
         </plugin>
+        <plugin>
+		    <artifactId>maven-surefire-plugin</artifactId>
+		    <configuration>
+		    <argLine>-javaagent:"${settings.localRepository}/org/jmockit/jmockit/1.36/jmockit-1.36.jar=coverage"</argLine>
+		    <disableXmlReport>false</disableXmlReport>
+		    <systemPropertyVariables>
+		    <coverage-output>html</coverage-output>
+		    <coverage-outputDir>${project.build.directory}/codecoverage-output</coverage-outputDir>
+		    <coverage-metrics>all</coverage-metrics>
+		    </systemPropertyVariables>
+		    </configuration>
+ 		</plugin>
     </plugins>
 </build>
 </project>
