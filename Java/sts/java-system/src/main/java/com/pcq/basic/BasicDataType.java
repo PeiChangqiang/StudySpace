@@ -30,9 +30,13 @@ public class BasicDataType {
 	long l = '哈';
 	
 	/**
-	 * 数据类型-浮点型
+	 * 数据类型-浮点型 
+	 * 记录的是近似值，而不是准确值
+	 * 因此金额这种数据应该用Bigdecimal而不是浮点数
 	 */
+	//单精度 4个字节
 	float f = '呵';
+	//双精度 8个字节
 	double d = '嘿';
 	
 	public void overFlow() {
