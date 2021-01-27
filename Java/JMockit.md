@@ -199,9 +199,7 @@ interface ISendMsgService {
 
 * Tested修饰的是我们要测试的对象，当它依赖其它对象时，使用Injectable修饰，则可以将修饰的对象通过依赖注入到Tested对象的属性中。
 
-
-
-#### （3）Expectations
+### 3.Expectations
 
 * 引用外部类的Mock对象来录制
 
@@ -262,4 +260,90 @@ public class ExpectationsStudy {
 	}
 }
 ```
+
+### 4.MockUp & @Mock
+
+```java
+public class TestMockUp {
+
+	@Test
+	public void testMockUp() {
+		new MockUp<MockUpObject>(MockUpObject.class) {//传入被测试类到MockUp的构造函数中
+			@Mock //配合@Mock想录制哪个行为就录制Mock哪个行为，未录制的行为不受影响
+			public String getName(String name) {
+				if(name == "") {
+					return "空字符串";
+				}
+				if(name == "1") {
+					return "a";
+				}
+				return "testMockUp";
+			}
+		};
+		MockUpObject mu = new MockUpObject();
+		Assert.assertTrue("空字符串".equals(mu.getName("")));
+		Assert.assertTrue("a".equals(mu.getName("1")));
+		Assert.assertTrue("男".equals(mu.getSex("男")));
+	}
+}
+
+class MockUpObject {
+	public String getName() {
+		return "";
+	}
+	
+	public String getName(String name) {
+		return "名字：" + name;
+	}
+	
+	public String getName(String name, String sex) {
+		return "名字：" + name + ";姓名：" + sex;
+ 	}
+	
+	public String getSex(String sex) {
+		return sex;
+	}
+}
+
+```
+
+* MockUp相比于Expectations对行为的Mock更加灵活，但有时候必须得用Expectations。一般来说，对简单重复方法的录制可以考虑MockUp。
+
+### 5.Verifications
+
+* 该内部类用于验证方法有没有被调用，以及调用了多少次。但实际情况中，很少关心方法有没有被调用或者被调用多少次，而是关心方法被调用后是不是我们想要的结果，因此该内部类运用的不是很多。
+
+```java
+public class VerificationsStudy {
+
+	@Test
+	public void testVerifications() {
+		Calendar cal = Calendar.getInstance();
+		//录制
+		new Expectations(Calendar.class) {
+			{
+				cal.get(Calendar.DAY_OF_MONTH);
+				result = 1;
+			}
+		};
+
+		//回放
+		Assert.assertTrue(1 == cal.get(Calendar.DAY_OF_MONTH));
+		cal.getFirstDayOfWeek();
+		cal.getFirstDayOfWeek();
+		
+		//验证
+		new Verifications() {
+			{
+				cal.get(anyInt);//验证该方法被调用了
+				times = 1; //限定该方法只调用了一次，限定不是必须的
+				cal.getFirstDayOfWeek();//验证该方法被调用了
+				times = 2;//限定该方法调用了两次 ，当然限定不是必须的
+			}
+		};
+	}
+}
+```
+
+
 
