@@ -347,3 +347,172 @@ public class VerificationsStudy {
 
 
 
+## 三、JMockit常见用法
+
+### 1.Mock类
+
+* 假设有一个普通类
+
+```java
+//假设有一个普通类，它有各种不同的方法
+class OrdinaryClass {
+	public static int staticMethod() {//静态方法
+		return 0;
+	}
+	
+	public final int finalMethod() {//final方法
+		return 1;
+	}
+	
+	public native int nativeMethod();//native方法
+
+	private int privateMethod() {//private方法
+		return 2;
+	}
+	
+	public int ordinaryMethod() {//普通方法
+		return 3;
+	}
+	
+	public int callPrivate() {//调用私有方法的普通方法
+		return privateMethod();
+	}
+}
+```
+
+#### 	（1）使用Expectations类
+
+```java
+//1.通过Expectations来mock类
+@Test
+public void testMockClassByExpectations() {
+    OrdinaryClass instance = new OrdinaryClass();//用于录制的普通类
+    new Expectations(OrdinaryClass.class) {
+        {
+            OrdinaryClass.staticMethod();
+            result = 10;
+            instance.finalMethod();
+            result = 20;
+            instance.ordinaryMethod();
+            result = 30;
+            //instance.privateMethod();private方法无法访问，自然也就无法在Expectations中mock
+            //instance.nativeMethod();  native方法无法mock
+            //result = 40;
+            instance.callPrivate();
+            result = 50;
+        }
+    };
+    OrdinaryClass ins = new OrdinaryClass();
+    Assert.assertTrue(10 == OrdinaryClass.staticMethod());
+    Assert.assertTrue(20 == ins.finalMethod());
+    Assert.assertTrue(30 == ins.ordinaryMethod());
+    Assert.assertTrue(50 == ins.callPrivate());
+}
+```
+
+#### 	（2）使用MockUp类
+
+* 使用MockUp类录制的时候，这里需要构造一个静态的类来继承MockUp，然后在该静态类之中通过@Mock来mock方法。之所以需要一个静态的类是因为其中要录制一个静态的方法，如果无需录制静态的方法，则无需使用这种方式。
+
+```java
+//2.通过MockUp来mock类
+public static class OrdinaryClassMockUp extends MockUp<OrdinaryClass> {
+    @Mock
+    public static int staticMethod() {//静态方法
+        return 10;
+    }
+
+    @Mock
+    public final int finalMethod() {//final方法
+        return 20;
+    }
+
+    @Mock
+    public int nativeMethod() {//native方法
+        return 30;
+    };
+
+    @Mock
+    private int privateMethod() {//private方法
+        return 40;
+    }
+
+    @Mock
+    public int ordinaryMethod() {//普通方法
+        return 50;
+    }
+}
+
+@Test
+public void testMockClassByMockUp() {
+    new OrdinaryClassMockUp();//先实例化构造出来的中间类
+    OrdinaryClass instance = new OrdinaryClass();//再实例化需要回放的测试类
+    Assert.assertTrue(10 == OrdinaryClass.staticMethod());
+    Assert.assertTrue(20 == instance.finalMethod());
+    Assert.assertTrue(30 == instance.nativeMethod());
+    Assert.assertTrue(40 == instance.callPrivate());
+    Assert.assertTrue(50 == instance.ordinaryMethod());
+}
+```
+
+* 可以看出，**使用MockUp的时候，也可以录制 native方法和private方法**。
+
+### 2.Mock实例
+
+* 使用Expectations 来mock实例和mock类的区别仅仅在于，前者只影响一个实例，而后者则影响类的所有实例。使用上只需要注入实例对象到Expectations的构造函数中即可。这里不做赘述。
+
+### 3.Mock接口
+
+* 假设有一简单接口
+
+```java
+interface OrdinaryInterface {
+	int method1();
+	int method2();
+}
+```
+
+#### （1）使用Expectations类
+
+```java
+@Injectable
+OrdinaryInterface inter;//这里需要Jmockit帮忙创建接口的一个实例
+//1.通过Expectations 
+@Test
+public void testMockInterfaceByExpectations() {
+
+    new Expectations() {
+        {
+            inter.method1();
+            result = 10;
+            inter.method2();
+            result = 20;
+        }
+    };
+    Assert.assertTrue(10 == inter.method1());
+    Assert.assertTrue(20 == inter.method2());
+}
+```
+
+#### （2）使用MockUp类
+
+```java
+//2.通过MockUp
+@Test
+public void testMockInterfaceByMockUp() {
+    OrdinaryInterface inter = new MockUp<OrdinaryInterface>(OrdinaryInterface.class) {
+        @Mock
+        public int method1() {
+            return 10;
+        }
+
+        @Mock
+        public int method2() {
+            return 20;
+        }
+    }.getMockInstance();
+
+    Assert.assertTrue(10 == inter.method1());
+    Assert.assertTrue(20 == inter.method2());
+}
+```
