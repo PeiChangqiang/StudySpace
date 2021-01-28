@@ -8,6 +8,11 @@ import mockit.Injectable;
 import mockit.Mock;
 import mockit.MockUp;
 
+/**
+ * 该类用于测试 Mock接口时的一些常见用法
+ * @author Administrator
+ *
+ */
 public class MockInterface {
 
 	@Injectable
