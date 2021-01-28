@@ -516,3 +516,148 @@ public void testMockInterfaceByMockUp() {
     Assert.assertTrue(20 == inter.method2());
 }
 ```
+
+## 四、JMockit高级用法
+
+### 1.Mock构造函数&代码块
+
+* 有时候构造函数或者代码块在做一些初始化的时候也不是我们想要的结果，也可以Mock掉这些逻辑。
+
+```java
+/**
+ * 该类用于测试 Mock构造函数和代码块时的 使用方式
+ * @author Administrator
+ *
+ */
+public class MockConstructorAndBlock {
+
+	
+	public static class StaticMockClassWithBlock extends MockUp<MockClassWithBlock> {//构造中间静态类
+		@Mock
+		public void $init(int i) {//函数名$init 代表的就是模拟类的构造函数
+			
+		}
+		
+		@Mock
+		public void $clinit() {//函数名$clinit代表的就是静态代码块
+			
+		}
+	}
+	
+	@Test
+	public void testMockClassWithBlock() {
+		new StaticMockClassWithBlock();//实例化中间静态类
+		MockClassWithBlock instance = new MockClassWithBlock(20);//实例化被测试的类
+		Assert.assertTrue(0 == instance.getI());
+		Assert.assertTrue(0 == MockClassWithBlock.j);
+	}
+}
+
+
+
+class MockClassWithBlock {
+	private int i;
+	static int j;
+	
+	{
+		i = 10;
+	}
+	
+	static {//静态代码块
+		j = 20;
+	}
+	
+	public MockClassWithBlock(int i) {
+		this .i = i;
+	}
+	
+	public int getI() {
+		return i;
+	}
+	
+	public void setI(int i) {
+		this.i = i;
+	}
+}
+
+```
+
+### 2.Mock一类多实例
+
+* 有时候希望一个类，它的多个实例的同一个行为有不同的mock逻辑。则可以参考以下代码。
+* 其实核心就是Expectations录制了什么行为，就会改变什么行为。@Mocked和@Injectable仅仅帮助我们构造对象，并且给对象的方法初始化返回值。而@Mocked影响的是类的所有实例，@Injectable只影响被它修饰的实例
+
+```java
+/**
+ * 该类用于测试 一个类 多个实例但希望多个实例有不同的mock逻辑
+ * @author Administrator
+ *
+ */
+public class MockOneClassToSeveralInstance {
+
+	//1.使用Expectations
+	@Test
+	public void testWithExpectations() {
+		TestClass t1 = new TestClass();
+		TestClass t2 = new TestClass();
+		new Expectations(t1, t2) {
+			{
+				t1.getInt();
+				result = 10;
+				t2.getInt();
+				result = 20;
+			}
+		};
+		Assert.assertTrue(10 == t1.getInt());
+		Assert.assertTrue(20 == t2.getInt());
+	}
+	
+	//2.使用@Mocked
+	@Mocked TestClass t1;
+	@Mocked TestClass t2;
+	@Test
+	public void testWithMocked() {
+		new Expectations() {
+			{
+				t1.getInt();
+				result = 10;
+				t2.getInt();
+				result = 20;
+			}
+		};
+		Assert.assertTrue(10 == t1.getInt());
+		Assert.assertTrue(20 == t2.getInt());
+		//如果未录制该实例的某个方法，那么@Mocked的类，它的所有实例方法都会被接管，因此返回默认值
+		TestClass t3 = new TestClass();
+		Assert.assertTrue(0 == t3.getInt());
+	}
+	
+	//3.使用@Injectable
+	@Injectable TestClass t4;
+	@Injectable TestClass t5;
+	@Test
+	public void testWithInjectable() {
+		new Expectations() {
+			{
+				t4.getInt();
+				result = 10;
+				t5.getInt();
+				result = 20;
+			}
+		};
+		Assert.assertTrue(10 == t4.getInt());
+		Assert.assertTrue(20 == t5.getInt());
+		//@Injectable只影响实例，因此t3不受影响
+		TestClass t3 = new TestClass();
+		Assert.assertTrue(1 == t3.getInt());
+	}
+}
+
+//测试类
+class TestClass {
+	public int getInt() {
+		return 1;
+	}
+}
+```
+
