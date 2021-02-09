@@ -661,3 +661,151 @@ class TestClass {
 }
 ```
 
+### 3.Mock泛型
+
+```java
+interface Inter {
+	int m1();
+	int m2();
+}
+
+@Test
+public <T extends Inter> void testMockGenerics() {//通过传入泛型来模拟接口，就是mock这个类型的上限。
+    new MockUp<T>() {
+        @Mock
+        public int m1() {
+            return 10;
+        }
+        @Mock
+        public int m2() {
+            return 20;
+        }
+    };
+    Inter i1 = new Inter() {
+        @Override
+        public int m1() {
+            return 1;
+        }
+        @Override
+        public int m2() {
+            return 2;
+        }
+    };
+
+    Inter i2 = new Inter() {
+        @Override
+        public int m1() {
+            return 1;
+        }
+        @Override
+        public int m2() {
+            return 2;
+        }
+    };
+    Assert.assertTrue(10 == i1.m1());
+    Assert.assertTrue(20 == i1.m2());
+    Assert.assertTrue(10 == i2.m1());
+    Assert.assertTrue(20 == i2.m2());
+}
+```
+
+* 如果只是为了mock一个接口，那么其实@Mocked 或者 @Injectable都可以。通过传入泛型mock只是一种方式。
+
+### 4.Mock方法中调用老方法
+
+```java
+//Mock方法中还可以调用老方法
+public class InvocationMockUpTest {
+    @Test
+    public void testMockUp() {
+        // 对Java自带类Calendar的get方法进行定制
+        new MockUp<Calendar>(Calendar.class) {
+            // 申明参数invocation，表示老方法的调用
+            @Mock
+            public int get(Invocation invocation, int unit) {
+                // 只希望时间是早上7点
+                if (unit == Calendar.HOUR_OF_DAY) {
+                    return 7;
+                }
+                // 其它时间（年份，月份，日，分，秒均不变)
+                return invocation.proceed(unit);
+            }
+        };
+        Calendar now = Calendar.getInstance();
+        // 只有小时变成Mock方法
+        Assert.assertTrue(now.get(Calendar.HOUR_OF_DAY) == 7);
+        // 其它的还是走老的方法
+        Assert.assertTrue(now.get(Calendar.MONTH) == (new Date()).getMonth());
+        Assert.assertTrue(now.get(Calendar.DAY_OF_MONTH) == (new Date()).getDate());
+    }
+ 
+}
+```
+
+### 5.同一方法调用返回时序结果
+
+```java
+public class MockReturnOrderResult {
+	
+	@Test
+	public void testMethod() {
+		Case c = new Case();
+		new Expectations(Case.class) {
+			{
+				c.method();
+				result = new int[] {10, 20, 30};//每次调用都按照数组的下标依次返回
+			}
+		};
+		Assert.assertTrue(10 == c.method());
+		Assert.assertTrue(20 == c.method());
+		Assert.assertTrue(30 == c.method());
+	}
+
+}
+
+
+
+class Case {
+	public int method() {
+		return 1;
+	}
+}
+```
+
+### 6.定制返回结果
+
+```java
+public class MockDelegateResult {
+
+	
+	@Test
+	@SuppressWarnings("all")
+	public void testGetStr() {
+		new Expectations(T.class) {
+			{
+				T t = new T();
+				t.getStr(anyString);
+				result = new Delegate() {
+					String delegate(Invocation inv, String param) {
+						if("x".equals(param)) {
+							return "hehe";
+						}
+						return inv.proceed(param);
+					}
+				};
+			}
+		};
+		T t = new T();
+		//当调用getStr()时，其实是调用的delegate
+		Assert.assertTrue("hehe".equals(t.getStr("x")));
+		Assert.assertTrue("test : y".equals(t.getStr("y")));
+	}
+}
+
+class T {
+	public String getStr(String x) {
+		return "test : " + x;
+	}
+}
+```
+
